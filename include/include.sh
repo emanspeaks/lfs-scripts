@@ -1,5 +1,6 @@
 includedalready=1
 myname=${0##*/}
+myname=${myname%.sh}
 outlog=$logpath/$myname-out.log
 errlog=$logpath/$myname-err.log
 cmdlog=$logpath/$myname-cmd.log
