@@ -13,7 +13,12 @@ oldpwd=`pwd`
 toolchain=$lfsroot/toolchain
 wrap=$lfsroot/include/wrapper.sh
 
-try source $lfsroot/prep/download.sh
+if [ $1 -ne "--skip-download" ]
+then
+	try source $lfsroot/prep/download.sh
+fi
+
+
 cd $toolchain
 try $wrap binutils-2.25.tar.bz2 binutils1.sh
 
