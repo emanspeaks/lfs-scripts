@@ -1,0 +1,97 @@
+1. bash prep/version-check.sh
+2. bash prep/library-check.sh
+3. create partition for LFS
+4. sudo mkdir /mnt/lfs
+5. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
+6. sudo prep/sudo.sh
+
+might want to reboot here.  
+
+1. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
+2. su - lfs
+3. ./main.sh
+
+
+SOURCE LIST:
+
+acl-2.2.52.src.tar.gz
+attr-2.4.47.src.tar.gz
+autoconf-2.69.tar.xz
+automake-1.15.tar.xz
+bash-4.3.30.tar.gz
+bc-1.06.95.tar.bz2
+binutils-2.25.tar.bz2
+bison-3.0.4.tar.xz
+bzip2-1.0.6.tar.gz
+check-0.9.14.tar.gz
+coreutils-8.23.tar.xz
+dejagnu-1.5.2.tar.gz
+diffutils-3.3.tar.xz
+eudev-2.1.1.tar.gz
+eudev-2.1.1-manpages.tar.bz2
+e2fsprogs-1.42.12.tar.gz
+expat-2.1.0.tar.gz
+expect5.45.tar.gz
+file-5.22.tar.gz
+findutils-4.4.2.tar.gz
+flex-2.5.39.tar.bz2
+gawk-4.1.1.tar.xz
+gcc-4.9.2.tar.bz2
+gdbm-1.11.tar.gz
+gettext-0.19.4.tar.xz
+glibc-2.21.tar.xz
+gmp-6.0.0a.tar.xz
+gperf-3.0.4.tar.gz
+grep-2.21.tar.xz
+groff-1.22.3.tar.gz
+grub-2.02~beta2.tar.xz
+gzip-1.6.tar.xz
+iana-etc-2.30.tar.bz2
+inetutils-1.9.2.tar.gz
+intltool-0.50.2.tar.gz
+iproute2-3.19.0.tar.xz
+kbd-2.0.2.tar.gz
+kmod-19.tar.xz
+less-458.tar.gz
+lfs-bootscripts-20150222.tar.bz2
+libcap-2.24.tar.xz
+libpipeline-1.4.0.tar.gz
+libtool-2.4.6.tar.xz
+linux-3.19.tar.xz
+m4-1.4.17.tar.xz
+make-4.1.tar.bz2
+man-db-2.7.1.tar.xz
+man-pages-3.79.tar.xz
+mpc-1.0.2.tar.gz
+mpfr-3.1.2.tar.xz
+ncurses-5.9.tar.gz
+patch-2.7.4.tar.xz
+perl-5.20.2.tar.bz2
+pkg-config-0.28.tar.gz
+procps-ng-3.3.10.tar.xz
+psmisc-22.21.tar.gz
+readline-6.3.tar.gz
+sed-4.2.2.tar.bz2
+shadow-4.2.1.tar.xz
+sysklogd-1.5.1.tar.gz
+sysvinit-2.88dsf.tar.bz2
+tar-1.28.tar.xz
+tcl8.6.3-src.tar.gz
+texinfo-5.2.tar.xz
+tzdata2015a.tar.gz
+udev-lfs-20140408.tar.bz2
+util-linux-2.26.tar.xz
+vim-7.4.tar.bz2
+XML-Parser-2.44.tar.gz
+xz-5.2.0.tar.xz
+zlib-1.2.8.tar.xz
+bash-4.3.30-upstream_fixes-1.patch
+bc-1.06.95-memory_leak-1.patch
+bzip2-1.0.6-install_docs-1.patch
+coreutils-8.23-i18n-1.patch
+glibc-2.21-fhs-1.patch
+kbd-2.0.2-backspace-1.patch
+mpfr-3.1.2-upstream_fixes-3.patch
+readline-6.3-upstream_fixes-3.patch
+sysvinit-2.88dsf-consolidated-1.patch
+
