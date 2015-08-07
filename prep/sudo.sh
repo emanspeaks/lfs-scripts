@@ -27,5 +27,5 @@ try mkdir -v /tools/lib
 case $(uname -m) in
   x86_64)  try ln -sv lib /tools/lib64 ;;
 esac
-try chown -v lfs:lfs $LFS/{sources,tools}
+try chown -v lfs:lfs $LFS/{sources,tools{,/lib}}
 passwd lfs
