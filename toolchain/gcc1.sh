@@ -45,4 +45,4 @@ try ../gcc-4.9.2/configure                               \
 try make
 try make install
 cd ..
-try rm -vrf gcc-4.9.2
+try rm -vrf gcc-build1
