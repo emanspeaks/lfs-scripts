@@ -1,8 +1,8 @@
 if [ ! -r /usr/include/rpc/types.h ]; then
-  try su -c 'mkdir -pv /usr/include/rpc'
-  try su -c 'cp -v sunrpc/rpc/*.h /usr/include/rpc'
+  su -c 'mkdir -pv /usr/include/rpc'
+  su -c 'cp -v sunrpc/rpc/*.h /usr/include/rpc'
 fi
-try sed -e '/ia32/s/^/1:/' \
+sed -e '/ia32/s/^/1:/' \
     -e '/SSE2/s/^1://' \
     -i  sysdeps/i386/i686/multiarch/mempcpy_chk.S
 try mkdir -v ../glibc-build

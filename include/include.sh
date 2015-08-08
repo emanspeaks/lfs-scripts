@@ -1,9 +1,18 @@
 includedalready=1
 myname=${0##*/}
 myname=${myname%.sh}
-outlog=$logpath/$myname-out.log
-errlog=$logpath/$myname-err.log
-cmdlog=$logpath/$myname-cmd.log
+outlog=""
+errlog=""
+cmdlog=""
+
+setlogname()
+{
+	outlog=$logpath/$1-out.log
+	errlog=$logpath/$1-err.log
+	cmdlog=$logpath/$1-cmd.log
+}
+
+setlogname $myname
 
 cmdlogrec()
 {
@@ -13,7 +22,7 @@ cmdlogrec()
 profile()
 {
 	cmdlogrec "START $*"
-	$*
+	$@
 	ret=$?
 	cmdlogrec "END $*"
 	return $ret
@@ -21,7 +30,7 @@ profile()
 
 cmdtee()
 {	
-	$* > >(tee -a "$outlog") 2> >(tee -a "$errlog" >&2)
+	$@ > >(tee -a "$outlog") 2> >(tee -a "$errlog" >&2)
 	ret=$?
 	sleep 1 # needed to let tee buffers flush
 	return $ret

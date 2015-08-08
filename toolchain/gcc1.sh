@@ -6,9 +6,9 @@ for file in \
  $(find gcc/config -name linux64.h -o -name linux.h -o -name sysv4.h)
 do
   try cp -uv $file{,.orig}
-  try sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&@g' \
+  sed -e 's@/lib\(64\)\?\(32\)\?/ld@/tools&@g' \
       -e 's@/usr@/tools@g' $file.orig > $file
-  try echo '
+  echo '
 #undef STANDARD_STARTFILE_PREFIX_1
 #undef STANDARD_STARTFILE_PREFIX_2
 #define STANDARD_STARTFILE_PREFIX_1 "/tools/lib/"
@@ -16,7 +16,7 @@ do
   try touch $file.orig
 done
 
-try sed -i '/k prot/agcc_cv_libc_provides_ssp=yes' gcc/configure
+sed -i '/k prot/agcc_cv_libc_provides_ssp=yes' gcc/configure
 try mkdir -v ../gcc-build1
 cd ../gcc-build1
 try ../gcc-4.9.2/configure                               \
