@@ -41,7 +41,26 @@ case $1 in
 		pushd $LFS/sources
 		echo 'main(){}' > dummy.c
 		try $LFS_TGT-gcc dummy.c
-		echo `readelf -l a.out | grep ': /tools' | cut -d: -f2`
+		echo "DOES THIS SAY /tools/lib(64)?:" 
+		echo `readelf -l a.out | grep ': /tools'`
+		echo -e "\a"
+		read -n1 -r -p "Press any key to continue if successful..." key
+		try rm -v dummy.c a.out
+		popd
+		;&
+	
+	7) ptry $wrap gcc-4.9.2.tar.bz2 libstdcxx.sh ;&
+	8) ptry $wrap binutils-2.25.tar.bz2 binutils2.sh ;&
+	9) ptry $wrap gcc-4.9.2.tar.bz2 gcc2.sh ;&
+	
+	10)
+		pushd $LFS/sources
+		echo 'main(){}' > dummy.c
+		try cc dummy.c
+		echo "DOES THIS SAY /tools/lib(64)?:" 
+		echo `readelf -l a.out | grep ': /tools'`
+		echo -e "\a"
+		read -n1 -r -p "Press any key to continue if successful..." key
 		try rm -v dummy.c a.out
 		popd
 		;&
