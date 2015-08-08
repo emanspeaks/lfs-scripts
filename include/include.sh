@@ -39,6 +39,7 @@ cmdtee()
 die()
 {
 	>&2 echo "$*"
+	echo -e "\a"
 	exit 1
 }
 
@@ -50,4 +51,11 @@ try()
 ptry()
 {
 	profile "$*" || die "LFS build failed at line: $*"
+}
+
+pressanykey()
+{
+	echo -e "\a"
+	read -n1 -r -p "Press any key to continue if successful..." key
+	echo " "
 }
