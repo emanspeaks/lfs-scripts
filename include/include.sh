@@ -22,7 +22,7 @@ cmdlogrec()
 profile()
 {
 	cmdlogrec "START $*"
-	$@
+	eval $*
 	ret=$?
 	cmdlogrec "END $*"
 	return $ret
@@ -30,7 +30,7 @@ profile()
 
 cmdtee()
 {	
-	$@ > >(tee -a "$outlog") 2> >(tee -a "$errlog" >&2)
+	eval $* > >(tee -a "$outlog") 2> >(tee -a "$errlog" >&2)
 	ret=$?
 	sleep 1 # needed to let tee buffers flush
 	return $ret
