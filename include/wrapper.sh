@@ -19,11 +19,12 @@ pushd `dirname $2` > /dev/null; srcpath=`pwd`; popd > /dev/null
 
 pushd $LFS/sources
 try tar -xvf $1
-cd ${1%.tar*}
+tardir=`ls -d ${1%-*}-*/`
+cd $tardir
 
 try source $srcpath/$2
 
 cd ..
-try rm -rvf ${1%.tar*}
+try rm -rvf $tardir
 setlogname $myname
 popd
