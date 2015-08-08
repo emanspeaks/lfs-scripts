@@ -13,7 +13,7 @@ cmdlogrec()
 profile()
 {
 	cmdlogrec "START $*"
-	$@
+	$*
 	ret=$?
 	cmdlogrec "END $*"
 	return $ret
@@ -21,7 +21,7 @@ profile()
 
 cmdtee()
 {	
-	$@ > >(tee -a "$outlog") 2> >(tee -a "$errlog" >&2)
+	$* > >(tee -a "$outlog") 2> >(tee -a "$errlog" >&2)
 	ret=$?
 	sleep 1 # needed to let tee buffers flush
 	return $ret
@@ -35,5 +35,10 @@ die()
 
 try()
 {
-	profile cmdtee $@ || die "LFS build failed at line: $*"
+	ptry cmdtee $* 
+}
+
+ptry()
+{
+	profile $* || die "LFS build failed at line: $*"
 }

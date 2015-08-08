@@ -29,7 +29,7 @@ cd ${1%.tar*}
 try source $srcpath/$2
 
 cd ..
-try rm -rf ${1%.tar*}
+try rm -rvf ${1%.tar*}
 outlog=$oldout
 errlog=$olderr
 cmdlog=$oldcmd

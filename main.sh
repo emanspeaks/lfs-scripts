@@ -19,7 +19,7 @@ fi
 
 pushd $toolchain
 case $1 in
-	1) profile $wrap binutils-2.25.tar.bz2 binutils1.sh ;&
+	1) ptry $wrap binutils-2.25.tar.bz2 binutils1.sh ;&
 	
 	2)
 	  pushd $LFS/sources
@@ -29,9 +29,9 @@ case $1 in
 		popd
 		;&
 		
-	3) profile $wrap gcc-4.9.2.tar.bz2 gcc1.sh ;&
-	4) profile $wrap linux-3.19.tar.xz linuxapi.sh ;&
-	5) profile $wrap glibc-2.21.tar.xz glibc.sh ;&
+	3) ptry $wrap gcc-4.9.2.tar.bz2 gcc1.sh ;&
+	4) ptry $wrap linux-3.19.tar.xz linuxapi.sh ;&
+	5) ptry $wrap glibc-2.21.tar.xz glibc.sh ;&
 
 	6)
 		pushd $LFS/sources
