@@ -9,7 +9,6 @@ then
   source $lfsroot/include/include.sh
 fi
 
-oldpwd=`pwd`
 toolchain=$lfsroot/toolchain
 wrap=$lfsroot/include/wrapper.sh
 
@@ -19,7 +18,7 @@ then
 fi
 
 
-cd $toolchain
+pushd $toolchain
 try $wrap binutils-2.25.tar.bz2 binutils1.sh
 
 #try tar -xvf $LFS/sources/mpfr-3.1.2.tar.xz
@@ -32,4 +31,4 @@ try $wrap binutils-2.25.tar.bz2 binutils1.sh
 
 #genlist=()
 
-cd $oldpwd
+popd

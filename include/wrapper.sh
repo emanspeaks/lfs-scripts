@@ -14,23 +14,23 @@ then
 else
   logfn=${2%.sh}
 fi
-oldpwd=`pwd`
 oldout=$outlog
 olderr=$errlog
 oldcmd=$cmdlog
 outlog=$logpath/$logfn-out.log
 errlog=$logpath/$logfn-err.log
 cmdlog=$logpath/$logfn-cmd.log
+pushd `dirname $2` > /dev/null; srcpath=`pwd`; popd > /dev/null
 
-cd $LFS/sources
+pushd $LFS/sources
 try tar -xvf $1
 cd ${1%.tar*}
 
-try source $2
+try source $srcpath/$2
 
 cd ..
 try rm -rf ${1%.tar*}
 outlog=$oldout
 errlog=$olderr
 cmdlog=$oldcmd
-cd $oldpwd
+popd
