@@ -6,7 +6,7 @@ sed -e '/ia32/s/^/1:/' \
     -e '/SSE2/s/^1://' \
     -i  sysdeps/i386/i686/multiarch/mempcpy_chk.S
 try mkdir -v ../glibc-build
-cd ../glibc-build
+pushd ../glibc-build
 
 try ../glibc-2.21/configure                             \
       --prefix=/tools                               \
@@ -20,6 +20,5 @@ try ../glibc-2.21/configure                             \
       libc_cv_c_cleanup=yes
 try make
 try make install
-
-cd ..
-try rm -vrf glibc-build
+popd
+try rm -vrf ../glibc-build

@@ -1,5 +1,5 @@
 try mkdir -v ../binutils-build1
-cd ../binutils-build1
+pushd ../binutils-build1
 try ../binutils-2.25/configure     \
     --prefix=/tools            \
     --with-sysroot=$LFS        \
@@ -9,5 +9,5 @@ try ../binutils-2.25/configure     \
     --disable-werror
 try make
 try make install
-cd ..
-try rm -vrf binutils-build1
+popd
+try rm -vrf ../binutils-build1

@@ -18,7 +18,7 @@ done
 
 sed -i '/k prot/agcc_cv_libc_provides_ssp=yes' gcc/configure
 try mkdir -v ../gcc-build1
-cd ../gcc-build1
+pushd ../gcc-build1
 try ../gcc-4.9.2/configure                               \
     --target=$LFS_TGT                                \
     --prefix=/tools                                  \
@@ -44,5 +44,5 @@ try ../gcc-4.9.2/configure                               \
     --enable-languages=c,c++
 try make
 try make install
-cd ..
-try rm -vrf gcc-build1
+popd
+try rm -vrf ../gcc-build1
