@@ -22,9 +22,11 @@ case $1 in
 	1) profile $wrap binutils-2.25.tar.bz2 binutils1.sh ;&
 	
 	2)
+	  pushd $LFS/sources
 		try tar -xvf $LFS/sources/mpfr-3.1.2.tar.xz
 		try tar -xvf $LFS/sources/gmp-6.0.0a.tar.xz 
 		try tar -xvf $LFS/sources/mpc-1.0.2.tar.gz
+		popd
 		;&
 		
 	3) profile $wrap gcc-4.9.2.tar.bz2 gcc1.sh ;&
@@ -32,10 +34,12 @@ case $1 in
 	5) profile $wrap glibc-2.21.tar.xz glibc.sh ;&
 
 	6)
+		pushd $LFS/sources
 		echo 'main(){}' > dummy.c
 		try $LFS_TGT-gcc dummy.c
 		echo `readelf -l a.out | grep ': /tools' | cut -d: -f2`
 		try rm -v dummy.c a.out
+		popd
 		;&
 
 	#genlist=()
