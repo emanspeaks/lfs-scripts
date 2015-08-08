@@ -23,9 +23,9 @@ case $1 in
 	
 	2)
 	  pushd $LFS/sources
-		try tar -xvf $LFS/sources/mpfr-3.1.2.tar.xz
-		try tar -xvf $LFS/sources/gmp-6.0.0a.tar.xz 
-		try tar -xvf $LFS/sources/mpc-1.0.2.tar.gz
+		try tar -xf $LFS/sources/mpfr-3.1.2.tar.xz
+		try tar -xf $LFS/sources/gmp-6.0.0a.tar.xz 
+		try tar -xf $LFS/sources/mpc-1.0.2.tar.gz
 		popd
 		;&
 		

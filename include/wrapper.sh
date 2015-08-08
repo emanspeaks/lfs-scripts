@@ -23,7 +23,7 @@ cmdlog=$logpath/$logfn-cmd.log
 pushd `dirname $2` > /dev/null; srcpath=`pwd`; popd > /dev/null
 
 pushd $LFS/sources
-try tar -xvf $1
+try tar -xf $1
 cd ${1%.tar*}
 
 try source $srcpath/$2
