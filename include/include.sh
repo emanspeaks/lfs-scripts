@@ -20,5 +20,5 @@ cmdtee()
 
 try()
 {
-	cmdtee $@ || (echo "LFS build failed at line: $*"; exit 1)
+	cmdtee $@ || echo "LFS build failed at line: $*" && exit 1
 }
