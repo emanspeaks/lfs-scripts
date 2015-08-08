@@ -8,7 +8,7 @@ then
   source $lfsroot/include/include.sh
 fi
 
-if [ $2 -eq "generic.sh" ]
+if [ "$2" == "generic.sh" ]
 then
 	logfn=${1%-*}
 else

@@ -18,7 +18,13 @@ cmdtee()
 	cmdprofile "END $*"
 }
 
+die()
+{
+	>&2 echo $*
+	exit 1
+}
+
 try()
 {
-	cmdtee $@ || echo "LFS build failed at line: $*" && exit 1
+	cmdtee $@ || die "LFS build failed at line: $*"
 }
