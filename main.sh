@@ -31,11 +31,12 @@ case $1 in
 	4) profile $wrap linux-3.19.tar.xz linuxapi.sh ;&
 	5) profile $wrap glibc-2.21.tar.xz glibc.sh ;&
 
-	echo 'main(){}' > dummy.c
-	try $LFS_TGT-gcc dummy.c
-	echo `readelf -l a.out | grep ': /tools' | cut -d: -f2`
-
-	try rm -v dummy.c a.out
+	6)
+		echo 'main(){}' > dummy.c
+		try $LFS_TGT-gcc dummy.c
+		echo `readelf -l a.out | grep ': /tools' | cut -d: -f2`
+		try rm -v dummy.c a.out
+		;&
 
 	#genlist=()
 esac
