@@ -9,3 +9,5 @@ try ../binutils-2.25/configure     \
     --disable-werror
 try make
 try make install
+cd ..
+try rm -vrf binutils-build1
