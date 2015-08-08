@@ -93,8 +93,8 @@ case $1 in
 		try /usr/bin/strip --strip-unneeded /tools/{,s}bin/*
 		try rm -rf /tools/{,share}/{info,man,doc}
 		pressanykey
+		;&
 	
 	*) ;;
 esac
-
 popd
