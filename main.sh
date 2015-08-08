@@ -12,29 +12,32 @@ fi
 toolchain=$lfsroot/toolchain
 wrap=$lfsroot/include/wrapper.sh
 
-if [ $1 -ne "--skip-download" ]
+if [ -z $1 ]
 then
 	try source $lfsroot/prep/download.sh
 fi
 
-
 pushd $toolchain
-try $wrap binutils-2.25.tar.bz2 binutils1.sh
+case $1 in
+	1) profile $wrap binutils-2.25.tar.bz2 binutils1.sh ;&
+	
+	2)
+		try tar -xvf $LFS/sources/mpfr-3.1.2.tar.xz
+		try tar -xvf $LFS/sources/gmp-6.0.0a.tar.xz 
+		try tar -xvf $LFS/sources/mpc-1.0.2.tar.gz
+		;&
+		
+	3) profile $wrap gcc-4.9.2.tar.bz2 gcc1.sh ;&
+	4) profile $wrap linux-3.19.tar.xz linuxapi.sh ;&
+	5) profile $wrap glibc-2.21.tar.xz glibc.sh ;&
 
-try tar -xvf $LFS/sources/mpfr-3.1.2.tar.xz
-try tar -xvf $LFS/sources/gmp-6.0.0a.tar.xz
-try tar -xvf $LFS/sources/mpc-1.0.2.tar.gz
+	echo 'main(){}' > dummy.c
+	try $LFS_TGT-gcc dummy.c
+	echo `readelf -l a.out | grep ': /tools' | cut -d: -f2`
 
-try $wrap gcc-4.9.2.tar.bz2 gcc1.sh
-try $wrap linux-3.19.tar.xz linuxapi.sh
-try $wrap glibc-2.21.tar.xz glibc.sh
+	try rm -v dummy.c a.out
 
-echo 'main(){}' > dummy.c
-try $LFS_TGT-gcc dummy.c
-echo `readelf -l a.out | grep ': /tools' | cut -d: -f2`
-
-try rm -v dummy.c a.out
-
-#genlist=()
+	#genlist=()
+esac
 
 popd
