@@ -1,4 +1,4 @@
-try patch -Np1 -i ../glibc-2.21-fhs-1.
+try patch -Np1 -i ../glibc-2.21-fhs-1.patch
 sed -e '/ia32/s/^/1:/' \
     -e '/SSE2/s/^1://' \
     -i  sysdeps/i386/i686/multiarch/mempcpy_chk.S
