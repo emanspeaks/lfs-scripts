@@ -4,7 +4,7 @@
 if [ -z $includedalready ]
 then
 	pushd `dirname $0` > /dev/null; mypath=`pwd`; popd > /dev/null
-	lfsroot=$mypath #unique to main.sh since it's top-level
+	lfsroot=$mypath #unique to main2.sh since it's top-level
 	logpath=$lfsroot/logs
   source $lfsroot/include/include.sh
 fi

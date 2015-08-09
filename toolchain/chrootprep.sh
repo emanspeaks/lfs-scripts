@@ -1,3 +1,14 @@
+#!/bin/bash
+#this script assumes you are running with SUDO as user lfs:lfs
+
+if [ -z $includedalready ]
+then
+	pushd `dirname $0` > /dev/null; mypath=`pwd`; popd > /dev/null
+	lfsroot=$mypath/.. 
+	logpath=$lfsroot/logs
+  source $lfsroot/include/include.sh
+fi
+
 try chown -R root:root $LFS/tools
 try mkdir -pv $LFS/{dev,proc,sys,run} 
 try mknod -m 600 $LFS/dev/console c 5 1
