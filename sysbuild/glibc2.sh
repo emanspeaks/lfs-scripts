@@ -9,6 +9,7 @@ then
   source $lfsroot/include/include.sh
 fi
 
+makeinstall=$lfsroot/sysbuild/makeinstall.sh
 setlogname glibc2
 tardir=glibc-2.21
 pkgname=glibc
