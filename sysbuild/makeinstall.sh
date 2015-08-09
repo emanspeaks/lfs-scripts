@@ -3,5 +3,5 @@ pkgpath=/usr/pkg/$pkgname
 try ln -svf $pkgpath/$tardir $pkgpath/ver
 pushd $pkgpath/ver
 find * -type d -exec mkdir -pv /{} \;
-find * -type f -exec ln -svf /usr/pkg/$pkgname/ver/{} /{} \;
+find * -type f -exec ln -svf $pkgpath/ver/{} /{} \;
 popd
