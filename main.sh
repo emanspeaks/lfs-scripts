@@ -70,25 +70,25 @@ case $1 in
 	15) ptry $wrap ncurses-5.9.tar.gz ncurses.sh ;&
 	16) ptry $wrap bash-4.3.30.tar.gz bash.sh ;&
 	17) ptry $wrap bzip2-1.0.6.tar.gz bzip2.sh ;& 
-	17) ptry $wrap coreutils-8.23.tar.xz coreutils.sh ;& 
-	18) ptry $wrap diffutils-3.3.tar.xz generic.sh ;&
-	19) ptry $wrap file-5.22.tar.gz generic.sh ;&
-	20) ptry $wrap findutils-4.4.2.tar.gz generic.sh ;&
-	21) ptry $wrap gawk-4.1.1.tar.xz generic.sh ;&
-	22) ptry $wrap gettext-0.19.4.tar.xz gettext.sh ;&
-	23) ptry $wrap grep-2.21.tar.xz generic.sh ;&
-	24) ptry $wrap gzip-1.6.tar.xz generic.sh ;&
-	25) ptry $wrap m4-1.4.17.tar.xz generic.sh ;&
-	26) ptry $wrap make-4.1.tar.bz2 make.sh ;&
-	27) ptry $wrap patch-2.7.4.tar.xz generic.sh ;&
-	28) ptry $wrap perl-5.20.2.tar.bz2 perl.sh ;&
-	29) ptry $wrap sed-4.2.2.tar.bz2 generic.sh ;&
-	30) ptry $wrap tar-1.28.tar.xz generic.sh ;&
-	31) ptry $wrap texinfo-5.2.tar.xz generic.sh ;&
-	32) ptry $wrap util-linux-2.26.tar.xz util-linux.sh ;&
-	33) ptry $wrap xz-5.2.0.tar.xz generic.sh ;&
+	18) ptry $wrap coreutils-8.23.tar.xz coreutils.sh ;& 
+	19) ptry $wrap diffutils-3.3.tar.xz generic.sh ;&
+	20) ptry $wrap file-5.22.tar.gz generic.sh ;&
+	21) ptry $wrap findutils-4.4.2.tar.gz generic.sh ;&
+	22) ptry $wrap gawk-4.1.1.tar.xz generic.sh ;&
+	23) ptry $wrap gettext-0.19.4.tar.xz gettext.sh ;&
+	24) ptry $wrap grep-2.21.tar.xz generic.sh ;&
+	25) ptry $wrap gzip-1.6.tar.xz generic.sh ;&
+	26) ptry $wrap m4-1.4.17.tar.xz generic.sh ;&
+	27) ptry $wrap make-4.1.tar.bz2 make.sh ;&
+	28) ptry $wrap patch-2.7.4.tar.xz generic.sh ;&
+	29) ptry $wrap perl-5.20.2.tar.bz2 perl.sh ;&
+	30) ptry $wrap sed-4.2.2.tar.bz2 generic.sh ;&
+	31) ptry $wrap tar-1.28.tar.xz generic.sh ;&
+	32) ptry $wrap texinfo-5.2.tar.xz generic.sh ;&
+	33) ptry $wrap util-linux-2.26.tar.xz util-linux.sh ;&
+	34) ptry $wrap xz-5.2.0.tar.xz generic.sh ;&
 	
-	34)
+	35)
 		try strip --strip-debug /tools/lib/*
 		try /usr/bin/strip --strip-unneeded /tools/{,s}bin/*
 		try rm -rf /tools/{,share}/{info,man,doc}
