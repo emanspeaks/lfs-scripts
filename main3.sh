@@ -23,12 +23,12 @@ case $startpt in
 	2) ptry $wrap man-pages-3.79.tar.xz manpages.sh ;&
 	
 	3) 
-		ptry glibc.sh 
+		ptry source glibc.sh 
 		echo "CHECK THE TEST RESULTS, SHOULD ONLY BE 2 FAIL (getaddrinfo)"
 		pressanykey
 		;&
 	
-	4) ptry glibc2.sh ;&
+	4) ptry source glibc2.sh ;&
 	
 	5)
 		try mv -v /tools/bin/{ld,ld-old}
@@ -71,7 +71,7 @@ case $startpt in
 		try rm -v dummy.log
 		;&
 	
-	#test through 4 before proceeding
+	#test through 5 before proceeding
 	#6) ptry $wrap zlib-1.2.8.tar.xz zlib.sh ;&
 	
 	*) pressanykey; startpt= ;;
