@@ -12,7 +12,7 @@ try make
 try ulimit -s 32768
 try make -k check
 ../gcc-4.9.2/contrib/test_summary | grep -A7 Summ
-try source $makeinstall
+try make install
 try ln -sv ../usr/bin/cpp /lib
 try ln -sv gcc /usr/bin/cc
 try install -v -dm755 /usr/lib/bfd-plugins

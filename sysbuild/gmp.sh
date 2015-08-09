@@ -5,5 +5,5 @@ try make
 try make html
 make check 2>&1 | tee gmp-check-log
 awk '/tests passed/{total+=$2} ; END{print total}' gmp-check-log
-try source $makeinstall
+try make install
 try make install-html

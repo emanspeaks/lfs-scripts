@@ -8,8 +8,6 @@ then
   source $lfsroot/include/include.sh
 fi
 
-makeinstall=$lfsroot/sysbuild/makeinstall.sh
-
 if [ "$2" == "generic.sh" ]
 then
 	logfn=${1%-*}

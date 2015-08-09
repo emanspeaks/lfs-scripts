@@ -5,5 +5,5 @@ try ./configure --prefix=/usr        \
 try make
 try make html
 try make check
-try source $makeinstall
+try make install
 try make install-html

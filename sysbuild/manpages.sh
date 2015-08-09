@@ -1,1 +1,1 @@
-try source $makeinstall
+try make install

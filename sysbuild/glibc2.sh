@@ -9,7 +9,6 @@ then
   source $lfsroot/include/include.sh
 fi
 
-makeinstall=$lfsroot/sysbuild/makeinstall.sh
 setlogname glibc2
 tardir=glibc-2.21
 pkgname=glibc
@@ -17,7 +16,7 @@ pkgname=glibc
 pushd /sources/glibc-build
 
 try touch /etc/ld.so.conf
-try source $makeinstall
+try make install
 try cp -v ../glibc-2.21/nscd/nscd.conf /etc/nscd.conf
 try mkdir -pv /var/cache/nscd
 try mkdir -pv /usr/lib/locale
