@@ -29,7 +29,7 @@ case $startpt in
 		pressanykey
 		;&
 	
-	4) ptry source glibc2.sh ;&
+	4|glibc2) ptry source glibc2.sh ;&
 	
 	5)
 		try mv -v /tools/bin/{ld,ld-old}
