@@ -97,9 +97,10 @@ case $startpt in
 		pressanykey
 		;&
 
-	36|chroot) ptry sudo ./chrootprep.sh ;&
+	36) ptry sudo ./chrootprep.sh ;&
+	37|chroot) ptry sudo ./chrootmount.sh ;&
 	
-	37) sudo chroot "$LFS" /tools/bin/env -i \
+	38) sudo chroot "$LFS" /tools/bin/env -i \
     HOME=/root                  \
     TERM="$TERM"                \
     PS1='\u:\w\$ '              \
