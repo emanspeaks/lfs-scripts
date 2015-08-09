@@ -1,6 +1,6 @@
-try ln -sv ../mpfr-3.1.2 mpfr
-try ln -sv ../gmp-6.0.0 gmp
-try ln -sv ../mpc-1.0.2 mpc
+try mv -v ../mpfr-3.1.2 mpfr
+try mv -v ../gmp-6.0.0 gmp
+try mv -v ../mpc-1.0.2 mpc
 
 for file in \
  $(find gcc/config -name linux64.h -o -name linux.h -o -name sysv4.h)

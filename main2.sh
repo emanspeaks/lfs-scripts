@@ -16,7 +16,7 @@ try install -dv -m 1777 /tmp /var/tmp
 try mkdir -pv /usr/{,local/}{bin,include,lib,sbin,src}
 try mkdir -pv /usr/{,local/}share/{color,dict,doc,info,locale,man}
 try mkdir -v  /usr/{,local/}share/{misc,terminfo,zoneinfo}
-try mkdir -v  /usr/libexec
+try mkdir -v  /usr/{libexec,pkg}
 try mkdir -pv /usr/{,local/}share/man/man{1..8}
 
 case $(uname -m) in

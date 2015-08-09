@@ -1,6 +1,6 @@
-try ln -sv ../mpfr-3.1.2 mpfr
-try ln -sv ../gmp-6.0.0 gmp
-try ln -sv ../mpc-1.0.2 mpc
+try mv -v ../mpfr-3.1.2 mpfr
+try mv -v ../gmp-6.0.0 gmp
+try mv -v ../mpc-1.0.2 mpc
 
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
   `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include-fixed/limits.h

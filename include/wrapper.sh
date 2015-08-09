@@ -21,6 +21,8 @@ pushd $LFS/sources
 try tar -xvf $1
 tardir=${1%%.*}
 tardir=$(ls -d $(echo ${tardir%%-*} | sed 's/[^a-zA-Z\-]//g')*/)
+pkgname=$(echo $tardir | sed 's/[^a-zA-Z\-]//g')
+pkgname=${pkgname%-*}
 cd $tardir
 
 try source $srcpath/$2

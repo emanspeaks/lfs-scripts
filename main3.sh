@@ -71,8 +71,7 @@ case $startpt in
 		try rm -v dummy.log
 		;&
 	
-	#test through 5 before proceeding
-	#6) ptry $wrap zlib-1.2.8.tar.xz zlib.sh ;&
+	6) ptry $wrap zlib-1.2.8.tar.xz zlib.sh ;&
 	
 	*) pressanykey; startpt= ;;
 esac
