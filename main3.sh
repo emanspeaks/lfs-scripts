@@ -1,5 +1,5 @@
 #!/bin/bash
-#this script assumes you are CHROOTED and running as user lfs:lfs
+#this script assumes you are CHROOTED and running as user ROOT
 
 if [ -z $includedalready ]
 then
@@ -19,7 +19,9 @@ fi
 
 pushd $lfsroot/sysbuild
 case $startpt in
-	1) ptry source fhs.sh ;&
+	1) ptry $wrap linux-3.19.tar.xz linuxapi.sh ;&
+	2) ptry $wrap man-pages-3.79.tar.xz manpages.sh ;&
+	3) ptry $wrap glibc-2.21.tar.xz glibc.sh ;&
 	
 	*) startpt= ;;
 esac
