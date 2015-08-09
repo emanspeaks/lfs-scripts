@@ -104,7 +104,7 @@ case $startpt in
     TERM="$TERM"                \
     PS1='\u:\w\$ '              \
     PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin \
-    /tools/bin/bash --login +h
+    /tools/bin/bash --login +h ;&
 	
 	*) startpt= ;;
 esac
