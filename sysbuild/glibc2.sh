@@ -74,7 +74,7 @@ done
 
 try cp -v zone.tab zone1970.tab iso3166.tab $ZONEINFO
 try zic -d $ZONEINFO -p America/New_York
-try cp -v $ZONEINFO/America/Chicago /etc/localtime
+try ln -sv $ZONEINFO/America/Chicago /etc/localtime
 unset ZONEINFO
 
 cat > /etc/ld.so.conf << "EOF"
