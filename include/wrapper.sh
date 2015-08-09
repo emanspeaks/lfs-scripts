@@ -19,7 +19,7 @@ pushd `dirname $2` > /dev/null; srcpath=`pwd`; popd > /dev/null
 
 pushd $LFS/sources
 try tar -xvf $1
-tardir=$(ls -d $(echo ${1%%.*} | sed 's/[^a-zA-Z]//g')*/)
+tardir=$(ls -d $(echo ${1%%.*} | sed 's/[^a-zA-Z\-]//g')*/)
 cd $tardir
 
 try source $srcpath/$2
