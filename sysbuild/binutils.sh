@@ -8,10 +8,16 @@ try make tooldir=/usr
 try make -k check
 try make DESTDIR=/usr/pkg/$pkgname/$tardir tooldir=/usr install
 pkgpath=/usr/pkg/$pkgname
-try ln -svf $pkgpath/$tardir $pkgpath/ver
-pushd $pkgpath/ver
-find * -type d -exec mkdir -pv /{} \;
-find * -type f -exec ln -svf $pkgpath/ver/{} /{} \;
+#try ln -svf $pkgpath/$tardir $pkgpath/ver
+#pushd $pkgpath/ver
+#find * -type d -exec mkdir -pv /{} \;
+#find * -type f -exec ln -svf $pkgpath/ver/{} /{} \;
+#popd
+
+pushd $pkgpath
+try ln -svf $tardir ver
+cd ver
+find * -type d -exec mkdir -pv /{} \; -exec ln -svf {}/* /{} \;
 popd
 
 popd
