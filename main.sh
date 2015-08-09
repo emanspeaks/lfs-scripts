@@ -114,7 +114,7 @@ case $startpt in
 	37) ptry sudo ./chrootprep.sh ;&
 	38|chroot) ptry sudo ./chrootmount.sh ;&
 	
-	39) sudo chroot "$LFS" /tools/bin/env -i \
+	39|chroot2) sudo chroot "$LFS" /tools/bin/env -i \
     HOME=/root                  \
     TERM="$TERM"                \
     PS1='\u:\w\$ '              \
