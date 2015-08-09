@@ -1,4 +1,4 @@
-1. chmod +x prep/* include/wrapper.sh toolchain/chrootprep.sh main.sh main2.sh
+1. chmod +x prep/* include/wrapper.sh toolchain/chrootprep.sh main.sh main2.sh main3.sh
 2. bash prep/version-check.sh
 3. bash prep/library-check.sh
 4. create partition for LFS
@@ -13,6 +13,14 @@ might want to reboot here.
 2. su - lfs
 3. ./main.sh
 4. after chroot, ./main2.sh
+
+if need to stop and restart after this point, this is the order to get back in:
+
+1. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
+2. su - lfs
+3. ./main.sh chroot
+4. ./main3.sh [OPTIONAL STEP NUMBER]
+
 
 
 SOURCE LIST:

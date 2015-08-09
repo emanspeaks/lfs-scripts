@@ -97,7 +97,7 @@ case $startpt in
 		pressanykey
 		;&
 
-	36) ptry sudo ./chrootprep.sh ;&
+	36|chroot) ptry sudo ./chrootprep.sh ;&
 	
 	37) sudo chroot "$LFS" /tools/bin/env -i \
     HOME=/root                  \
