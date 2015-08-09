@@ -16,10 +16,11 @@ might want to reboot here.
 
 if need to stop and restart after this point, this is the order to get back in:
 
-1. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
-2. su - lfs
-3. ./main.sh chroot
-4. ./main3.sh [OPTIONAL STEP NUMBER]
+1. reboot recommended
+2. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
+3. su - lfs
+4. ./main.sh chroot
+5. ./main3.sh [OPTIONAL STEP NUMBER]
 
 
 
