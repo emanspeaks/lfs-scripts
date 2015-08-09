@@ -11,5 +11,7 @@ find $pkgpath/3.19/include \( -name .install -o -name ..install.cmd \) -delete
 pushd $pkgpath
 try ln -svf 3.19 ver
 cd ver/include
-find * -type d -exec mkdir -pv /usr/include/{} \; -exec ln -svf {}/* /usr/include/{} \;
+find * -type d -exec mkdir -pv /usr/include/{} \; 
+#-exec ln -svf {}/* /usr/include/{} \;
+find * -type f -exec ln -svf $pkgpath/ver/{} /usr/include/{} \;
 popd
