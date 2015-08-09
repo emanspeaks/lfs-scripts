@@ -117,6 +117,7 @@ case $startpt in
 		grep found dummy.log
 		pressanykey
 		try rm -v dummy.log
+		;&
 	
 	*) pressanykey; startpt= ;;
 esac
