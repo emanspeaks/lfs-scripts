@@ -5,7 +5,7 @@ if [ -z $includedalready ]
 then
 	pushd `dirname $0` > /dev/null; mypath=`pwd`; popd > /dev/null
 	lfsroot=$mypath/.. 
-	lfsstage=sysbuild
+	export lfsstage=sysbuild
 	logpath=$lfsroot/logs/$lfsstage
   source $lfsroot/include/include.sh
 fi
