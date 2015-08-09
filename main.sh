@@ -9,16 +9,17 @@ then
   source $lfsroot/include/include.sh
 fi
 
-toolchain=$lfsroot/toolchain
 wrap=$lfsroot/include/wrapper.sh
+startpt=$1
 
-if [ -z $1 ]
+if [ -z $startpt ]
 then
-	try source $lfsroot/prep/download.sh
+	ptry source $lfsroot/prep/download.sh
+	startpt=1
 fi
 
-pushd $toolchain
-case $1 in
+pushd $lfsroot/toolchain
+case $startpt in
 	1) ptry $wrap binutils-2.25.tar.bz2 binutils1.sh ;&
 	
 	2)
@@ -89,12 +90,22 @@ case $1 in
 	34) ptry $wrap xz-5.2.0.tar.xz generic.sh ;&
 	
 	35)
-		try strip --strip-debug /tools/lib/*
-		try /usr/bin/strip --strip-unneeded /tools/{,s}bin/*
-		try rm -rf /tools/{,share}/{info,man,doc}
+		cmdlogrec "stripping debug and man pages from toolchain"
+		strip --strip-debug /tools/lib/*
+		/usr/bin/strip --strip-unneeded /tools/{,s}bin/*
+		rm -rf /tools/{,share}/{info,man,doc}
 		pressanykey
 		;&
+
+	36) ptry sudo source sudo.sh ;&
 	
-	*) ;;
+	37) sudo chroot "$LFS" /tools/bin/env -i \
+    HOME=/root                  \
+    TERM="$TERM"                \
+    PS1='\u:\w\$ '              \
+    PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin \
+    /tools/bin/bash --login +h
+	
+	*) startpt= ;;
 esac
 popd

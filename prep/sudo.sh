@@ -20,7 +20,7 @@ export LFS=/mnt/lfs
 try chmod 777 $LFS
 try groupadd lfs
 try useradd -s /bin/bash -g lfs -m -k $mypath/skel lfs
-try mkdir -v $LFS/{sources,tools}
+try mkdir -v $LFS/{sources{,/lfs-scripts},tools}
 try chmod -v a+wt $LFS/sources
 try ln -sv $LFS/tools /
 try mkdir -v /tools/lib
@@ -28,4 +28,5 @@ case $(uname -m) in
   x86_64)  try ln -sv lib /tools/lib64 ;;
 esac
 try chown -v lfs:lfs $LFS/{sources,tools{,/lib}}
+try mount -v --bind $lfsroot $LFS/sources/lfs-scripts
 passwd lfs

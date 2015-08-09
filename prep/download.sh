@@ -8,9 +8,11 @@ then
   source $lfsroot/include/include.sh
 fi
 
+setlogname download
 pushd $LFS/sources
 try wget http://linuxfromscratch.org/lfs/downloads/7.7/wget-list
 try wget http://linuxfromscratch.org/lfs/downloads/7.7/md5sums
 try wget --input-file=wget-list --continue
 try md5sum -c md5sums
 popd
+setlogname $myname
