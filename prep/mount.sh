@@ -9,3 +9,4 @@ then
 fi
 
 try mount -v -t ext4 /dev/md0p2 /mnt/lfs
+try mount -v --bind $lfsroot $LFS/sources/lfs-scripts

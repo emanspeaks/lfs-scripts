@@ -3,7 +3,9 @@
 3. bash prep/library-check.sh
 4. create partition for LFS
 5. sudo mkdir /mnt/lfs
-6. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
+6. sudo prep/mount.sh 
+		6.1 or manually mount your new partition to /mnt/lfs
+		6.2 this script will fail before prep/sudo.sh is run.  It's ok.
 7. sudo prep/sudo.sh
 8. add lfs to sudoers file: visudo
 
@@ -19,8 +21,8 @@ if need to stop and restart after this point, this is the order to get back in:
 1. reboot recommended
 2. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
 3. su - lfs
-4. ./main.sh chroot
-5. ./main3.sh [OPTIONAL STEP NUMBER]
+4. $LFS/sources/lfs-scripts/main.sh chroot
+5. /sources/lfs-scripts/main3.sh [OPTIONAL STEP NUMBER]
 
 
 
