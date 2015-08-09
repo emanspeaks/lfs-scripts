@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/tools/bin/bash
 #this script assumes you are running with CHROOT as user lfs:lfs
 
 if [ -z $includedalready ]
