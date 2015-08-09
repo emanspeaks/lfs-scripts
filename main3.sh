@@ -23,6 +23,6 @@ case $startpt in
 	2) ptry $wrap man-pages-3.79.tar.xz manpages.sh ;&
 	3) ptry $wrap glibc-2.21.tar.xz glibc.sh ;&
 	
-	*) startpt= ;;
+	*) pressanykey; startpt= ;;
 esac
 popd
