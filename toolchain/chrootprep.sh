@@ -10,7 +10,7 @@ then
 fi
 
 export LFS=/mnt/lfs
-try chown -R root:root $LFS/tools
+try chown -Rv root:root $LFS/tools
 try mkdir -pv $LFS/{dev,proc,sys,run} 
 try mknod -m 600 $LFS/dev/console c 5 1
 try mknod -m 666 $LFS/dev/null c 1 3
