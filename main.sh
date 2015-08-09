@@ -97,7 +97,7 @@ case $startpt in
 		pressanykey
 		;&
 
-	36) ptry sudo source sudo.sh ;&
+	36) ptry sudo sudo.sh ;&
 	
 	37) sudo chroot "$LFS" /tools/bin/env -i \
     HOME=/root                  \

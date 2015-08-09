@@ -1,16 +1,18 @@
-1. chmod +x prep/* include/wrapper.sh main.sh main2.sh
+1. chmod +x prep/* include/wrapper.sh toolchain/sudo.sh main.sh main2.sh
 2. bash prep/version-check.sh
 3. bash prep/library-check.sh
 4. create partition for LFS
 5. sudo mkdir /mnt/lfs
 6. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
 7. sudo prep/sudo.sh
+8. add lfs to sudoers file: visudo
 
 might want to reboot here.  
 
 1. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
 2. su - lfs
 3. ./main.sh
+4. after chroot, ./main2.sh
 
 
 SOURCE LIST:
