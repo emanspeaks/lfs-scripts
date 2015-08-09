@@ -1,9 +1,10 @@
-1. bash prep/version-check.sh
-2. bash prep/library-check.sh
-3. create partition for LFS
-4. sudo mkdir /mnt/lfs
-5. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
-6. sudo prep/sudo.sh
+1. chmod +x prep/* include/wrapper.sh main.sh
+2. bash prep/version-check.sh
+3. bash prep/library-check.sh
+4. create partition for LFS
+5. sudo mkdir /mnt/lfs
+6. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
+7. sudo prep/sudo.sh
 
 might want to reboot here.  
 
