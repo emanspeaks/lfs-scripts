@@ -5,7 +5,8 @@ if [ -z $includedalready ]
 then
 	pushd `dirname $0` > /dev/null; mypath=`pwd`; popd > /dev/null
 	lfsroot=$mypath #unique to main2.sh since it's top-level
-	logpath=$lfsroot/logs
+	lfsstage=sysbuild
+	logpath=$lfsroot/logs/$lfsstage
   source $lfsroot/include/include.sh
 fi
 

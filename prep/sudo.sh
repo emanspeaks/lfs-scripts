@@ -4,7 +4,8 @@ if [ -z $includedalready ]
 then
 	pushd `dirname $0` > /dev/null; mypath=`pwd`; popd > /dev/null
 	lfsroot=$mypath/..
-	logpath=$lfsroot/logs
+	lfsstage=toolchain
+	logpath=$lfsroot/logs/$lfsstage
 	
 	#unique to sudo.sh
 	mkdir -v $logpath
