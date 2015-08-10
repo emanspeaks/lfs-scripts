@@ -68,6 +68,9 @@ case $startpt in
 	11) ptry $wrap procps-ng-3.3.10.tar.xz procps-ng.sh ;&
 	12) ptry $wrap e2fsprogs-1.42.12.tar.gz e2fsprogs.sh ;&
 	13) ptry $wrap coreutils-8.23.tar.xz coreutils.sh ;&
+	14) ptry $wrap iana-etc-2.30.tar.bz2 iana-etc.sh ;&
+	15) ptry $wrap m4-1.4.17.tar.xz generic.sh ;&
+	
 	
 	*) pressanykey; startpt= ;;
 esac
