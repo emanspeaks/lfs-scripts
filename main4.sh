@@ -73,7 +73,7 @@ case $startpt in
 	16) ptry $wrap flex-2.5.39.tar.bz2 flex.sh \
 		--docdir=/usr/share/doc/flex-2.5.39 ;&
 	17) ptry $wrap bison-3.0.4.tar.xz generic.sh \
-		--docdir=/usr/share/doc/bison-3.0.4
+		--docdir=/usr/share/doc/bison-3.0.4 ;&
 	18) ptry $wrap grep-2.21.tar.xz grep.sh --bindir=/bin ;&
 	19) ptry $wrap readline-6.3.tar.gz readline.sh ;&
 	

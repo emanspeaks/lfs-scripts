@@ -20,7 +20,7 @@ fi
 
 pushd $lfsroot/sysbuild
 case $startpt in
-	1) ptry $wrap bzip2-1.0.6.tar.gz bzip2.sh ;&
+	1) ptry $wrap bc-1.06.95.tar.bz2 bc.sh ;&
 	
 	*) pressanykey; startpt= ;;
 esac
