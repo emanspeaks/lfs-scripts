@@ -17,6 +17,8 @@ fi
 setlogname $logfn
 pushd `dirname $2` > /dev/null; srcpath=`pwd`; popd > /dev/null
 
+extraopts=${@:3}
+
 pushd $LFS/sources
 try tar -xvf $1
 tardir=${1%%.*}

@@ -79,15 +79,24 @@ case $startpt in
 		echo "DOES THIS SAY spawn ls?:"
 		expect -c "spawn ls"
 		pressanykey
-		ptry $wrap binutils-2.25.tar.bz2 binutils.sh ;&
+		ptry $wrap binutils-2.25.tar.bz2 binutils.sh 
+		;&
 	
 	9) ptry $wrap gmp-6.0.0a.tar.xz gmp.sh ;&
 	10) ptry $wrap mpfr-3.1.2.tar.xz mpfr.sh ;&
 	11) ptry $wrap mpc-1.0.2.tar.gz mpc.sh ;&
 	
-	12)
-		ptry $wrap gcc-4.9.2.tar.bz2 gcc.sh
-		
+	12) ptry source gcc.sh ;&
+	
+	13|gccresults)
+		../gcc-4.9.2/contrib/test_summary | grep -A7 Summ
+		echo "CHECK THE TEST RESULTS"
+		pressanykey
+		;&
+	
+	14|gcc2) ptry source gcc2.sh ;&
+	
+	15)
 		echo 'main(){}' > dummy.c
 		cc dummy.c -v -Wl,--verbose &> dummy.log
 		readelf -l a.out | grep ': /lib'
@@ -118,6 +127,21 @@ case $startpt in
 		pressanykey
 		try rm -v dummy.log
 		;&
+	
+	16) ptry $wrap bzip2-1.0.6.tar.gz bzip2.sh ;&
+	17) ptry $wrap pkg-config-0.28.tar.gz generic.sh  \
+						--with-internal-glib  \
+            --disable-host-tool   \
+            --docdir=/usr/share/doc/pkg-config-0.28 ;&
+	18) ptry $wrap ncurses-5.9.tar.gz ncurses.sh ;&
+	19) ptry $wrap attr-2.4.47.src.tar.gz attr.sh ;&
+	20) ptry $wrap acl-2.2.52.src.tar.gz acl.sh ;&
+	21) ptry $wrap libcap-2.24.tar.xz libcap.sh ;&
+	22) ptry $wrap sed-4.2.2.tar.bz2 sed.sh ;&
+	23) ptry $wrap psmisc-22.21.tar.gz psmisc.sh ;&
+	24) ptry $wrap procps-ng-3.3.10.tar.xz procps-ng.sh ;&
+	25) ptry $wrap e2fsprogs-1.42.12.tar.gz e2fsprogs.sh ;&
+	26) ptry $wrap coreutils-8.23.tar.xz coreutils.sh ;&
 	
 	*) pressanykey; startpt= ;;
 esac
