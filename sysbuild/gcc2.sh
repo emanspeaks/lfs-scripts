@@ -2,7 +2,7 @@ setlogname gcc2
 tardir=gcc-4.9.2
 pkgname=gcc
 
-pushd /sources/glibc-build
+pushd /sources/gcc-build
 
 try make install
 try ln -sv ../usr/bin/cpp /lib
