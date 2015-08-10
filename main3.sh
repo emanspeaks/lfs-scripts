@@ -4,7 +4,7 @@
 if [ -z $includedalready ]
 then
 	pushd `dirname $0` > /dev/null; mypath=`pwd`; popd > /dev/null
-	lfsroot=$mypath #unique to main2.sh since it's top-level
+	lfsroot=$mypath #unique to main3.sh since it's top-level
 	export lfsstage=sysbuild
 	logpath=$lfsroot/logs/$lfsstage
   source $lfsroot/include/include.sh
@@ -89,59 +89,11 @@ case $startpt in
 	12) ptry source gcc.sh ;&
 	
 	13|gccresults)
-		echo `/sources/gcc-4.9.2/contrib/test_summary | grep -A7 Summ`
-		echo "CHECK THE TEST RESULTS"
+		echo "RUN"
+		echo '"/sources/gcc-4.9.2/contrib/test_summary | grep -A7 Summ"'
+		echo "TO CHECK THE TEST RESULTS"
 		pressanykey
 		;&
-	
-	14|gcc2) ptry source gcc2.sh ;&
-	
-	15)
-		echo 'main(){}' > dummy.c
-		cc dummy.c -v -Wl,--verbose &> dummy.log
-		readelf -l a.out | grep ': /lib'
-		
-		echo "DOES THIS SAY /lib(64)?:" 
-		echo `readelf -l a.out | grep ': /tools'`
-		pressanykey
-		try rm -v dummy.c a.out
-		
-		echo "DOES THIS SAY crt[1in].*succeeded?:"
-		grep -o '/usr/lib.*/crt[1in].*succeeded' dummy.log
-		pressanykey
-		
-		echo "DOES THIS SAY #include <...> search starts here: /usr/{,local/}include?:"
-		grep -B4 '^ /usr/include' dummy.log
-		pressanykey
-		
-		echo 'DOES THIS SAY SEARCH_DIR("/usr/{,local/}lib"); SEARCH_DIR("/lib");?:'
-		grep 'SEARCH.*/usr/lib' dummy.log |sed 's|; |\n|g'
-		pressanykey
-		
-		echo "DOES THIS SAY attempt to open /lib/libc.so.6 succeeded?:"
-		grep "/lib.*/libc.so.6 " dummy.log
-		pressanykey
-		
-		echo "DOES THIS SAY found ld-linux.so.2 at /lib/ld-linux.so.2?:"
-		grep found dummy.log
-		pressanykey
-		try rm -v dummy.log
-		;&
-	
-	16) ptry $wrap bzip2-1.0.6.tar.gz bzip2.sh ;&
-	17) ptry $wrap pkg-config-0.28.tar.gz generic.sh  \
-						--with-internal-glib  \
-            --disable-host-tool   \
-            --docdir=/usr/share/doc/pkg-config-0.28 ;&
-	18) ptry $wrap ncurses-5.9.tar.gz ncurses.sh ;&
-	19) ptry $wrap attr-2.4.47.src.tar.gz attr.sh ;&
-	20) ptry $wrap acl-2.2.52.src.tar.gz acl.sh ;&
-	21) ptry $wrap libcap-2.24.tar.xz libcap.sh ;&
-	22) ptry $wrap sed-4.2.2.tar.bz2 sed.sh ;&
-	23) ptry $wrap psmisc-22.21.tar.gz psmisc.sh ;&
-	24) ptry $wrap procps-ng-3.3.10.tar.xz procps-ng.sh ;&
-	25) ptry $wrap e2fsprogs-1.42.12.tar.gz e2fsprogs.sh ;&
-	26) ptry $wrap coreutils-8.23.tar.xz coreutils.sh ;&
 	
 	*) pressanykey; startpt= ;;
 esac

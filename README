@@ -1,4 +1,4 @@
-1. chmod +x prep/* include/wrapper.sh toolchain/chroot{mount,prep}.sh main{,2,3}.sh
+1. chmod +x prep/* include/wrapper.sh toolchain/chroot{mount,prep}.sh main{,2,3,4}.sh
 2. bash prep/version-check.sh
 3. bash prep/library-check.sh
 4. create partition for LFS
