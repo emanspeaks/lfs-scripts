@@ -21,6 +21,8 @@ fi
 pushd $lfsroot/sysbuild
 case $startpt in
 	1) ptry $wrap bc-1.06.95.tar.bz2 bc.sh ;&
+	2) ptry $wrap libtool-2.4.6.tar.xz libtool.sh ;&
+	3) ptry $wrap gdbm-1.11.tar.gz generic.sh --enable-libgdbm-compat ;&
 	
 	*) pressanykey; startpt= ;;
 esac
