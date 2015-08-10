@@ -13,6 +13,7 @@ sed -i '/dummy/d' /etc/group
 try make install
 try mv -v /usr/bin/{cat,chgrp,chmod,chown,cp,date,dd,df,echo} /bin
 try mv -v /usr/bin/{false,ln,ls,mkdir,mknod,mv,pwd,rm} /bin
+hash -r
 try mv -v /usr/bin/{rmdir,stty,sync,true,uname} /bin
 try mv -v /usr/bin/chroot /usr/sbin
 try mv -v /usr/share/man/man1/chroot.1 /usr/share/man/man8/chroot.8

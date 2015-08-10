@@ -70,7 +70,20 @@ case $startpt in
 	13) ptry $wrap coreutils-8.23.tar.xz coreutils.sh ;&
 	14) ptry $wrap iana-etc-2.30.tar.bz2 iana-etc.sh ;&
 	15) ptry $wrap m4-1.4.17.tar.xz generic.sh ;&
+	16) ptry $wrap flex-2.5.39.tar.bz2 flex.sh \
+		--docdir=/usr/share/doc/flex-2.5.39 ;&
+	17) ptry $wrap bison-3.0.4.tar.xz generic.sh \
+		--docdir=/usr/share/doc/bison-3.0.4
+	18) ptry $wrap grep-2.21.tar.xz grep.sh --bindir=/bin ;&
+	19) ptry $wrap readline-6.3.tar.gz readline.sh ;&
 	
+	20) 
+		ptry $wrap bash-4.3.30.tar.gz bash.sh 
+		echo "RUN"
+		echo '"exec /bin/bash --login +h"'
+		echo "TO USE NEW BASH"
+		pressanykey
+		;&
 	
 	*) pressanykey; startpt= ;;
 esac
