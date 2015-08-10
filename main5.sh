@@ -63,7 +63,19 @@ case $startpt in
 	28) ptry $wrap sysvinit-2.88dsf.tar.bz2 sysvinit.sh ;&
 	29) ptry $wrap tar-1.28.tar.xz tar.sh ;&
 	30) ptry $wrap texinfo-5.2.tar.xz texinfo.sh ;&
+	31) ptry $wrap eudev-2.1.1.tar.gz eudev.sh ;&
+	32) ptry $wrap util-linux-2.26.tar.xz util-linux.sh ;&
+	33) ptry $wrap man-db-2.7.1.tar.xz generic.sh \
+						--docdir=/usr/share/doc/man-db-2.7.1 \
+            --sysconfdir=/etc                      \
+            --disable-setuid                       \
+            --with-browser=/usr/bin/lynx           \
+            --with-vgrind=/usr/bin/vgrind          \
+            --with-grap=/usr/bin/grap ;&
+	34) ptry $wrap vim-7.4.tar.bz2 vim.sh ;&
 	
+	35) try rm -rf /tmp/* ;&
+		
 	*) pressanykey; startpt= ;;
 esac
 popd

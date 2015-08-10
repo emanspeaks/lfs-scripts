@@ -22,7 +22,7 @@ extraopts=${@:3}
 pushd $LFS/sources
 try tar -xvf $1
 pkgname=$logfn
-tardir=$(ls -d $(echo ${pkgname}*/))
+tardir=$(ls -d $(echo ${pkgname:0:4} )*/)
 #pkgname=$(echo $tardir | sed 's/[^a-zA-Z\-]//g')
 #pkgname=${pkgname%-*}
 cd $tardir
