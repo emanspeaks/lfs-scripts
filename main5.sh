@@ -34,6 +34,7 @@ case $startpt in
 	8) ptry $wrap autoconf-2.69.tar.xz autoconf.sh ;&
 	9) ptry $wrap automake-1.15.tar.xz automake.sh ;&
 	10) ptry $wrap diffutils-3.3.tar.xz diffutils.sh ;&
+	11) ptry $wrap gawk-4.1.1.tar.xz gawk.sh ;&
 	
 	*) pressanykey; startpt= ;;
 esac
