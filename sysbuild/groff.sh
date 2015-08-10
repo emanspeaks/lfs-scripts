@@ -1,3 +1,3 @@
 try PAGE=letter ./configure --prefix=/usr
 try make
-try install
+try make install

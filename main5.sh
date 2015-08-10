@@ -46,6 +46,23 @@ case $startpt in
 	17) ptry $wrap xz-5.2.0.tar.xz xz.sh \
 		--docdir=/usr/share/doc/xz-5.2.0 ;&
 	18) ptry $wrap grub-2.02~beta2.tar.xz grub.sh ;&
+	19) ptry $wrap less-458.tar.gz less.sh ;&
+	20) ptry $wrap gzip-1.6.tar.xz gzip.sh --bindir=/bin ;&
+	21) ptry $wrap iproute2-3.19.0.tar.xz iproute2.sh ;&
+	22) ptry $wrap kbd-2.0.2.tar.gz kbd.sh ;&
+	23) ptry $wrap kmod-19.tar.xz kmod.sh \
+						--bindir=/bin          \
+            --sysconfdir=/etc      \
+            --with-rootlibdir=/lib \
+            --with-xz              \
+            --with-zlib ;&
+	24) ptry $wrap libpipeline-1.4.0.tar.gz libpipeline.sh ;&
+	25) ptry $wrap make-4.1.tar.bz2 generic.sh ;&
+	26) ptry $wrap patch-2.7.4.tar.xz generic.sh ;&
+	27) ptry $wrap sysklogd-1.5.1.tar.gz sysklogd.sh ;&
+	28) ptry $wrap sysvinit-2.88dsf.tar.bz2 sysvinit.sh ;&
+	29) ptry $wrap tar-1.28.tar.xz tar.sh ;&
+	30) ptry $wrap texinfo-5.2.tar.xz texinfo.sh ;&
 	
 	*) pressanykey; startpt= ;;
 esac
