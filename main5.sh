@@ -30,11 +30,22 @@ case $startpt in
             --disable-whois        \
             --disable-servers ;&
 	6) ptry $wrap perl-5.20.2.tar.bz2 perl.sh ;&
-	7) ptry $wrap XML-Parser-2.44.tar.gz xmlparser.sh ;&
+	7) ptry $wrap XML-Parser-2.44.tar.gz XML-Parser.sh ;&
 	8) ptry $wrap autoconf-2.69.tar.xz autoconf.sh ;&
 	9) ptry $wrap automake-1.15.tar.xz automake.sh ;&
 	10) ptry $wrap diffutils-3.3.tar.xz diffutils.sh ;&
 	11) ptry $wrap gawk-4.1.1.tar.xz gawk.sh ;&
+	12) ptry $wrap findutils-4.4.2.tar.gz findutils.sh \
+		--localstatedir=/var/lib/locate ;&
+	13) ptry $wrap gettext-0.19.4.tar.xz generic.sh \
+		--docdir=/usr/share/doc/gettext-0.19.4 ;&
+	14) ptry $wrap intltool-0.50.2.tar.gz intltool.sh ;&
+	15) ptry $wrap gperf-3.0.4.tar.gz generic.sh \
+		--docdir=/usr/share/doc/gperf-3.0.4 ;&
+	16) ptry $wrap groff-1.22.3.tar.gz groff.sh ;&
+	17) ptry $wrap xz-5.2.0.tar.xz xz.sh \
+		--docdir=/usr/share/doc/xz-5.2.0 ;&
+	18) ptry $wrap grub-2.02~beta2.tar.xz grub.sh ;&
 	
 	*) pressanykey; startpt= ;;
 esac
