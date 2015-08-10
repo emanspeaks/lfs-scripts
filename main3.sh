@@ -89,7 +89,7 @@ case $startpt in
 	12) ptry source gcc.sh ;&
 	
 	13|gccresults)
-		/sources/gcc-4.9.2/contrib/test_summary | grep -A7 Summ
+		echo `/sources/gcc-4.9.2/contrib/test_summary | grep -A7 Summ`
 		echo "CHECK THE TEST RESULTS"
 		pressanykey
 		;&
