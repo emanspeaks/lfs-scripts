@@ -1,5 +1,5 @@
 sed -r -i 's|/usr(/bin/test)|\1|' test/udev-test.pl
-try BLKID_CFLAGS=-I/tools/include       \
+BLKID_CFLAGS=-I/tools/include       \
 BLKID_LIBS='-L/tools/lib -lblkid'   \
 ./configure --prefix=/usr           \
             --bindir=/sbin          \
