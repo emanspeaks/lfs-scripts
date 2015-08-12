@@ -10,4 +10,4 @@ fi
 
 export LFS=/mnt/lfs
 try mount -v -t ext4 /dev/md0p2 $LFS
-try mount -v --bind $lfsroot $LFS/sources/lfs-scripts
+try mount -v --bind $lfsroot $LFS/sources/lfsscripts
