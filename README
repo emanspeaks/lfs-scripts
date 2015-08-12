@@ -1,4 +1,5 @@
-1. chmod +x prep/* include/wrapper.sh toolchain/chroot{mount,prep}.sh main{,2,3,4}.sh
+1. chmod +x prep/* include/wrapper.sh tool
+chain/chroot{mount,prep}.sh main{,2,3,4}.sh
 2. bash prep/version-check.sh
 3. bash prep/library-check.sh
 4. create partition for LFS
@@ -6,25 +7,48 @@
 6. sudo prep/mount.sh 
 		6.1 or manually mount your new partition to /mnt/lfs
 		6.2 this script will fail before prep/sudo.sh is run.  It's ok.
-7. sudo prep/sudo.sh
+7. sudo prep/sudosteps.sh
 8. add lfs to sudoers file: visudo
 
 might want to reboot here.  
 
 1. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
 2. su - lfs
-3. ./main.sh
-4. after chroot, ./main2.sh
+3. $LFS/sources/lfs-scripts/main.sh
+4. after chroot, $LFS/sources/lfs-scripts/main2.sh
+
+IF YOU WANT TO "CLEAN" FROM THIS POINT LATER (after all tools built) 
+run: sudo prep/cleanbuild.sh
 
 if need to stop and restart after this point, this is the order to get back in:
 
-1. reboot recommended
+1. reboot recommended (if no reboot, skip to step 3 and in step 4, use chroot2)
 2. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
 3. su - lfs
 4. $LFS/sources/lfs-scripts/main.sh chroot
-5. /sources/lfs-scripts/main3.sh [OPTIONAL STEP NUMBER]
 
+proceed with build:
+1. /sources/lfs-scripts/main3.sh
+2. will likely die after glibc, so pick up with: /sources/lfs-scripts/main3.sh glibc2
+3. will likely die after gcc, but check results first: /sources/gcc-4.9.2/contrib/test_summary | grep -A7 Summ
+4. /sources/lfs-scripts/main4.sh
 
+if need to stop and restart after this point, this is how to get back in:
+
+1. reboot recommended (if no reboot, skip to step 3 and in step 4, use chroot4)
+2. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
+3. su - lfs
+4. $LFS/sources/lfs-scripts/main.sh chroot3
+
+proceed with build:
+1. /sources/lfs-scripts/main5.sh
+
+if need to stop and restart after this point, this is how to get back in:
+
+1. reboot recommended (if no reboot, skip to step 3 and in step 4, use chroot6)
+2. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
+3. su - lfs
+4. $LFS/sources/lfs-scripts/main.sh chroot5
 
 SOURCE LIST:
 
