@@ -1,0 +1,8 @@
+# Begin /etc/hosts (network card version)
+
+127.0.0.1 localhost
+192.168.2.100 richmond.randyeckman.com
+192.168.2.101 richmondsrv.randyeckman.com
+45.23.20.122 www.randyeckman.com
+
+# End /etc/hosts (network card version)

@@ -5,7 +5,7 @@ if [ -z $includedalready ]
 then
 	pushd `dirname $0` > /dev/null; mypath=`pwd`; popd > /dev/null
 	lfsroot=$mypath #unique to main6.sh since it's top-level
-	export lfsstage=sysbuild
+	export lfsstage=sysconfig
 	logpath=$lfsroot/logs/$lfsstage
   source $lfsroot/include/include.sh
 fi
@@ -18,9 +18,11 @@ then
 	startpt=1
 fi
 
-pushd $lfsroot/sysbuild
+pushd $lfsroot/sysconfig
 case $startpt in
 	1) ptry $wrap lfs-bootscripts-20150222.tar.bz2 lfs-bootscripts.sh ;&
+	2) ptry source sysconfig.sh ;&
+	
 		
 	*) pressanykey; startpt= ;;
 esac
