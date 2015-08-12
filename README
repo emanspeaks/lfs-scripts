@@ -1,5 +1,5 @@
 1. chmod +x prep/* include/wrapper.sh tool
-chain/chroot{mount,prep}.sh main{,2,3,4}.sh
+chain/chroot{mount,prep}.sh main{,[2..6]}.sh
 2. bash prep/version-check.sh
 3. bash prep/library-check.sh
 4. create partition for LFS
@@ -49,6 +49,9 @@ if need to stop and restart after this point, this is how to get back in:
 2. sudo prep/mount.sh #or manually mount your new partition to /mnt/lfs
 3. su - lfs
 4. $LFS/sources/lfs-scripts/main.sh chroot5
+
+install bootscripts:
+1. /sources/lfs-scripts/main6.sh
 
 SOURCE LIST:
 
