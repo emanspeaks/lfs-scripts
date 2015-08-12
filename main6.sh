@@ -21,7 +21,10 @@ fi
 pushd $lfsroot/sysconfig
 case $startpt in
 	1) ptry $wrap lfs-bootscripts-20150222.tar.bz2 lfs-bootscripts.sh ;&
-	2) ptry source sysconfig.sh ;&
+	2) ptry source udevconfig.sh ;&
+	3) ptry source netconfig.sh ;&
+	4) ptry source initconfig.sh ;&
+	5) ptry source consoleconfig.sh ;&
 	
 		
 	*) pressanykey; startpt= ;;
