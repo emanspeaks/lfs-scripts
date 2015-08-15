@@ -1,0 +1,1 @@
+try install -m 755 $lfsroot/sysconfig/templates/fstab /etc/
