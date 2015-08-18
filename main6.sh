@@ -26,7 +26,7 @@ case $startpt in
 	4) ptry source initconfig.sh ;&
 	5) ptry source consoleconfig.sh ;&
 	6) ptry source bootconfig.sh ;&
-	7) ptry $wrap linux-3.19.tar.xz linux.sh ;&
+#	7) ptry $wrap linux-3.19.tar.xz linux.sh ;&
 	
 		
 	*) pressanykey; startpt= ;;
