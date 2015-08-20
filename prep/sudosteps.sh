@@ -19,7 +19,7 @@ export LFS=/mnt/lfs
 try chmod 777 $LFS
 try groupadd lfs
 try useradd -s /bin/bash -g lfs -m -k $mypath/skel lfs
-try mkdir -v $LFS/{sources{,/lfsscripts},tools}
+try mkdir -pv $LFS/{sources/lfsscripts,tools}
 try chmod -v a+wt $LFS/sources
 try ln -sv $LFS/tools /
 try mkdir -v /tools/lib
