@@ -1,4 +1,5 @@
 #!/bin/bash
+#assumed run as root and NOT chrooted!!!
 
 if [ -z $includedalready ]
 then
