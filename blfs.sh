@@ -15,7 +15,7 @@ install -m 755 $lfsroot/sysconfig/templates/profile $LFS/etc/
 install --directory --mode=0755 --owner=root --group=root $LFS/etc/profile.d
 install -m 755 $lfsroot/blfs/templates/profile.d/* $LFS/etc/profile.d/
 install --directory --mode=0755 --owner=root --group=root $LFS/etc/skel
-install -m 755 $lfsroot/blfs/templates/skel/* $LFS/etc/skel/
+install -m 755 $lfsroot/blfs/templates/skel/.* $LFS/etc/skel/
 dircolors -p > $LFS/etc/dircolors
 clear > $LFS/etc/issue
 
