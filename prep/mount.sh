@@ -10,8 +10,11 @@ fi
 
 export LFS=/mnt/lfs
 try mount -v -t ext4 /dev/syme/lfsroot $LFS
+#try mount -v --bind $lfsroot $LFS/sources/lfsscripts
 try mount -v -t ext4 /dev/syme/var $LFS/var
 try mount -v -t ext4 /dev/syme/home $LFS/home
 try mount -v -t ext4 /dev/syme/tools $LFS/tools
+try mount -v -t ext4 /dev/syme/src $LFS/src
+try mount -v -t ext4 /dev/syme/mysql $LFS/srv/mysql
 try mount -v -t ext4 /dev/sda2 $LFS/boot
-try mount -v --bind $lfsroot $LFS/sources/lfsscripts
+
