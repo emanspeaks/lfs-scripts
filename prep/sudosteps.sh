@@ -8,8 +8,7 @@ then
 	logpath=$lfsroot/logs/$lfsstage
 	
 	#unique to sudo.sh
-	mkdir -v $logpath
-	chmod 777 $logpath
+	install -v -d -m777 $logpath
 	#end unique to sudo.sh
 	
   source $lfsroot/include/include.sh

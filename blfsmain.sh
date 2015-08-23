@@ -29,15 +29,15 @@ case $startpt in
             # --disable-whois        \
             # --disable-servers ;&
 						
-  1) pushd /sources
+  1) pushd /src
 		 try tar -xvf blfs-bootscripts-20150304.tar.bz2
 		 popd 
 		 ;&
 
-# http://www.linuxfromscratch.org/blfs/downloads/7.7/blfs-bootscripts-20150304.tar.bz2
-# http://people.freedesktop.org/~dbn/initd-tools/releases/initd-tools-0.1.3.tar.gz
-# http://ftp.gnu.org/gnu/time/time-1.7.tar.gz
-# http://linux-pam.org/library/Linux-PAM-1.1.8.tar.bz2
+	2) ptry $wrap time-1.7.tar.gz time.sh --infodir=/usr/share/info ;&
+	3) ptry $wrap Linux-PAM-1.1.8.tar.bz2 pam.sh ;&
+	4) ptry $wrap shadow-4.2.1.tar.xz shadow.sh ;&
+		 
 # https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.24.tar.xz
 # http://ftp.gnu.org/gnu/which/which-2.20.tar.gz
 # http://www.netfilter.org/projects/iptables/files/iptables-1.4.21.tar.bz2
