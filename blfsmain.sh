@@ -35,7 +35,7 @@ case $startpt in
 		 ;&
 
 	2) ptry $wrap time-1.7.tar.gz time.sh --infodir=/usr/share/info ;&
-	3) ptry $wrap Linux-PAM-1.1.8.tar.bz2 pam.sh ;&
+	3) ptry $wrap Linux-PAM-1.1.8.tar.bz2 Linux-PAM.sh ;&
 	4) ptry $wrap shadow-4.2.1.tar.xz shadow.sh ;&
 		 
 # https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.24.tar.xz
