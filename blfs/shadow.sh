@@ -40,3 +40,6 @@ do
     try install -v -m644 /etc/pam.d/chage /etc/pam.d/${PROGRAM}
     sed -i "s/chage/$PROGRAM/" /etc/pam.d/${PROGRAM}
 done
+
+[ -f /etc/login.access ] && mv -v /etc/login.access{,.NOUSE}
+[ -f /etc/limits ] && mv -v /etc/limits{,.NOUSE}
