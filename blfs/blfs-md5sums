@@ -4,7 +4,6 @@ e38d2b8b34b1ca259cf7b053caac32b3  time-1.7.tar.gz
 d43ab9f680435a7fff35b4ace8d45b80  libcap-2.24.tar.xz
 95be0501a466e515422cde4af46b2744  which-2.20.tar.gz
 536d048c8e8eeebcd9757d0863ebb0c0  iptables-1.4.21.tar.bz2
-ffb716b0e9327968e7200d519e1d4c0d  dhcpcd-6.7.1.tar.bz2
 015ff58cd10607db0e0de60aeca2f5f8  haveged-1.9.1.tar.gz
 30537ef5a01e0ca94b7b8eb6a36bb1e4  lsb-release-1.4.tar.gz
 bfea581b42dc0fc247041e7d48cfd7fb  db-6.1.19.tar.gz
@@ -12,6 +11,7 @@ bfea581b42dc0fc247041e7d48cfd7fb  db-6.1.19.tar.gz
 039153dabe61e1ac8d9323b5522b56b0  libjpeg-turbo-1.4.0.tar.gz
 051c1068e6a0627f461948c365290410  tiff-4.0.3.tar.gz
 23b7286b5d4a86de950fd2ffc5cac742  libpng-1.6.16.tar.xz
+6ffe7865943b3dfd6d04546ab7776a8f  freetype-doc-2.5.5.tar.bz2
 2a7a314927011d5030903179cf183be0  freetype-2.5.5.tar.bz2
 e844caed8f2ca24c088505b0d6271bc0  icu4c-54_1-src.tgz
 f4c08d38ceade4a664ebff7228910a33  lcms2-2.6.tar.gz
@@ -34,6 +34,10 @@ d18fb866d97b536e8948833b84a58a73  curl-7.40.0.tar.lzma
 e5880760d1f43f4f49b3bf94b9046eee  git-2.3.0.tar.xz
 36fc7327c02c6f12fa24fc9ba78039e3  Python-3.4.2.tar.xz
 9e6a9aca9d155737868b3dc5fd82f788  libxml2-2.9.2.tar.gz
+62b490407489521db863b523a7f86375  unzip60.tar.gz
+03083e288e87a7e829e437358da7ef9e  docbook-xml-4.5.zip
+77b63a06db2db2b692dcb96c2c64dc45  docbook-xsl-doc-1.78.1.tar.bz2
+6dd0f89131cc35bf4f2ed105a1c17771  docbook-xsl-1.78.1.tar.bz2
 9667bf6f9310b957254fdcf6596600b7  libxslt-1.1.28.tar.gz
 824d000eb737af6e16c826dd3b2d6c90  fontconfig-2.11.1.tar.bz2
 5b6a829b2ac94efcd5fa3c223ed6d3ae  graphviz-2.38.0.tar.gz
@@ -44,6 +48,8 @@ e5880760d1f43f4f49b3bf94b9046eee  git-2.3.0.tar.xz
 c3c9a66e22d87fe3ae59865250b8a09c  libksba-1.3.2.tar.bz2
 a104faed3e97b9c302c5d67cc22b1d60  libassuan-2.2.0.tar.bz2
 40a05856cb3accf6679987b7899b0f5a  pinentry-0.9.0.tar.bz2
+c7ffc9a103afe2d1bba0b015e7aa887f  lzo-2.09.tar.gz
+efad5a503f66329bb9d2f4308b5de98a  libarchive-3.1.2.tar.gz
 5697a77503bb5636f4b4057dcc02aa32  cmake-3.1.3.tar.gz
 c4c56f986aa985677ca1db89630a2e11  libevent-2.0.22-stable.tar.gz
 7b1a197ea5d4027833a3a2ed26fc4cae  mariadb-10.0.16.tar.gz
