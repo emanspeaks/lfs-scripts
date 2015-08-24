@@ -5,6 +5,8 @@ outlog=""
 errlog=""
 cmdlog=""
 
+bootscripts=/src/blfs-bootscripts-20150304
+
 setlogname()
 {
 	outlog=$logpath/$1-out.log
