@@ -21,15 +21,7 @@ then
 fi
 
 pushd $lfsroot/blfs
-case $startpt in
-#	1) ptry $wrap lfs-bootscripts-20150222.tar.bz2 lfs-bootscripts.sh ;&
-# 2) ptry source udevconfig.sh ;&
-# 5) ptry $wrap inetutils-1.9.2.tar.gz inetutils.sh \
-						# --localstatedir=/var   \
-            # --disable-logger       \
-            # --disable-whois        \
-            # --disable-servers ;&
-						
+case $startpt in				
   1) pushd /src
 		 try tar -xvf blfs-bootscripts-20150304.tar.bz2
 		 popd 
