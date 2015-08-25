@@ -131,9 +131,14 @@ case $startpt in
 	56) ptry $wrap mariadb-10.0.16.tar.gz mariadb.sh ;&
 	57) ptry $wrap cyrus-sasl-2.1.26.tar.gz cyrus-sasl.sh ;&
 	58) ptry $wrap postfix-3.0.0.tar.gz postfix.sh ;&
-# ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.0.26.tar.bz2
-# http://anduin.linuxfromscratch.org/sources/BLFS/7.7/n/ntp-4.2.8p1.tar.gz
-# http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-6.7p1.tar.gz
+	59) ptry $wrap gnupg-2.0.26.tar.bz2 gnupg.sh ;&
+	60) ptry $wrap ntp-4.2.8p1.tar.gz ntp.sh \
+						--bindir=/usr/sbin    \
+            --sysconfdir=/etc     \
+            --enable-linuxcaps    \
+            --with-lineeditlibs=readline \
+            --docdir=/usr/share/doc/ntp-4.2.8p1 ;&
+	61) ptry $wrap openssh-6.7p1.tar.gz openssh.sh ;&
 # https://security.appspot.com/downloads/vsftpd-3.0.2.tar.gz
 # http://fcron.free.fr/archives/fcron-3.2.0.src.tar.gz
 # http://rpm5.org/files/popt/popt-1.16.tar.gz

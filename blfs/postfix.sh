@@ -19,3 +19,20 @@ try sh postfix-install -non-interactive \
    manpage_directory=/usr/share/man \
    html_directory=/usr/share/doc/postfix-3.0.0/html \
    readme_directory=/usr/share/doc/postfix-3.0.0/readme
+	 
+cat >> /etc/aliases << "EOF"
+# Begin /etc/aliases
+
+MAILER-DAEMON:    postmaster
+postmaster:       root
+
+root:             <LOGIN>
+# End /etc/aliases
+EOF
+
+# edit the /etc/postfix/main.cf and /etc/postfix/master.cf files before running
+# /usr/sbin/postfix check && /usr/sbin/postfix start
+
+pushd $bootscripts
+try make install-postfix
+popd
