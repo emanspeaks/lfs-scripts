@@ -139,14 +139,28 @@ case $startpt in
             --with-lineeditlibs=readline \
             --docdir=/usr/share/doc/ntp-4.2.8p1 ;&
 	61) ptry $wrap openssh-6.7p1.tar.gz openssh.sh ;&
-# https://security.appspot.com/downloads/vsftpd-3.0.2.tar.gz
-# http://fcron.free.fr/archives/fcron-3.2.0.src.tar.gz
-# http://rpm5.org/files/popt/popt-1.16.tar.gz
-# https://fedorahosted.org/releases/l/o/logrotate/logrotate-3.8.9.tar.gz
-# http://downloads.sourceforge.net/project/libtirpc/libtirpc/0.2.5/libtirpc-0.2.5.tar.bz2
-# ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/OLD/lsof_4.88.tar.bz2
-# http://downloads.sourceforge.net/rpcbind/rpcbind-0.2.2.tar.bz2
-# http://downloads.sourceforge.net/nfs/nfs-utils-1.3.2.tar.bz2
+	62) ptry $wrap vsftpd-3.0.2.tar.gz vsftpd.sh ;&
+	63) ptry $wrap fcron-3.2.0.src.tar.gz fcron.sh \
+						--sysconfdir=/etc      \
+            --localstatedir=/var   \
+            --with-boot-install=no \
+            --with-systemdsystemunitdir=no ;&
+	64) ptry $wrap popt-1.16.tar.gz popt.sh ;&
+	65) ptry $wrap logrotate-3.8.9.tar.gz logrotate.sh ;&
+	66) ptry $wrap libtirpc-0.2.5.tar.bz2 libtirpc.sh \
+	          --sysconfdir=/etc \
+            --disable-static  \
+            --disable-gssapi ;&
+	67) ptry $wrap lsof_4.88.tar.bz2 lsof.sh ;&
+	68) ptry $wrap rpcbind-0.2.2.tar.bz2 rpcbind.sh \
+						--bindir=/sbin      \
+            --with-rpcuser=root \
+            --without-systemdsystemunitdir ;&
+	69) ptry $wrap nfs-utils-1.3.2.tar.bz2 nfs-utils.sh \
+						--sysconfdir=/etc      \
+            --without-tcp-wrappers \
+            --disable-nfsv4        \
+            --disable-gss ;&
 # http://www.linuxfromscratch.org/patches/blfs/7.7/bind-9.10.1-P2-use_iproute2-1.patch
 # ftp://ftp.isc.org/isc/bind9/9.10.1-P2/bind-9.10.1-P2.tar.gz
 # http://archive.apache.org/dist/apr/apr-1.5.1.tar.bz2
