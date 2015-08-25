@@ -48,7 +48,7 @@ case $startpt in
 	11) ptry $wrap db-6.1.19.tar.gz db.sh ;&
 	12) ptry $wrap nasm-2.11.06.tar.xz nasm.sh ;&
 	13) ptry $wrap libjpeg-turbo-1.4.0.tar.gz libjpeg.sh ;&
-	14) ptry $wrap tiff-4.0.3.tar.gz genericcheck.sh --disable-static ;&
+	14) ptry $wrap tiff-4.0.3.tar.gz generic.sh --disable-static ;&
 	15) ptry $wrap libpng-1.6.16.tar.xz libpng.sh --disable-static ;&
 	16) ptry $wrap freetype-2.5.5.tar.bz2 freetype.sh --disable-static ;&
 	17) ptry $wrap icu4c-54_1-src.tgz icu.sh ;&
@@ -65,7 +65,7 @@ case $startpt in
 	24) ptry source certdata.sh ;&
 	25) ptry $wrap nettle-2.7.1.tar.gz nettle.sh ;&
 	26) ptry $wrap libtasn1-4.2.tar.gz libtasn.sh --disable-static ;&
-	27) ptry $wrap gnutls-3.3.12.tar.xz libtasn.sh \
+	27) ptry $wrap gnutls-3.3.12.tar.xz gnutls.sh \
 		--with-default-trust-store-file=/etc/ssl/ca-bundle.crt ;&
 	28) ptry $wrap pcre-8.36.tar.bz2 pcre.sh \
 						--docdir=/usr/share/doc/pcre-8.36 \
@@ -105,7 +105,7 @@ case $startpt in
 	36) ptry $wrap Python-3.4.2.tar.xz Python.sh ;&
 	37) ptry $wrap libxml2-2.9.2.tar.gz libxml2.sh ;&
 	38) ptry $wrap unzip60.tar.gz unzip.sh ;&
-	39) ptry source docbook.sh ;&
+	39) ptry source docbook-xml.sh ;&
 	40) ptry $wrap docbook-xsl-1.78.1.tar.bz2 docbook-xsl.sh ;&
 	41) ptry $wrap libxslt-1.1.28.tar.gz genericcheck.sh --disable-static ;&
 	42) ptry $wrap fontconfig-2.11.1.tar.bz2 fontconfig.sh \

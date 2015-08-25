@@ -11,6 +11,9 @@ fi
 if [ "$2" == "generic.sh" ]
 then
 	logfn=${1%-*}
+elif [ "$2" == "genericcheck.sh" ]
+then
+	logfn=${1%-*}
 else
   logfn=${2%.sh}
 fi

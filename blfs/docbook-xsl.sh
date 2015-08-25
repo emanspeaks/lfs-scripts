@@ -5,7 +5,7 @@ try cp -v -R VERSION common eclipse epub extensions fo highlighting html \
          roundtrip slides template tests tools webhelp website \
          xhtml xhtml-1_1 \
     /usr/share/xml/docbook/xsl-stylesheets-1.78.1 
-try ln -s VERSION /usr/share/xml/docbook/xsl-stylesheets-1.78.1/VERSION.xsl
+try ln -sf VERSION /usr/share/xml/docbook/xsl-stylesheets-1.78.1/VERSION.xsl
 try install -v -m644 -D README \
                     /usr/share/doc/docbook-xsl-1.78.1/README.txt
 try install -v -m644    RELEASE-NOTES* NEWS* \
