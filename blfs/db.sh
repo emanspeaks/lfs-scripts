@@ -11,3 +11,4 @@ try chown -v -R root:root                        \
       /usr/include/db{,_185,_cxx}.h          \
       /usr/lib/libdb*.{so,la}                \
       /usr/share/doc/db-6.1.19
+cd ..

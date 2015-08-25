@@ -1,5 +1,5 @@
-try groupadd -g 40 mysql &&
-try useradd -c "MySQL Server" -d /srv/mysql -g mysql -s /bin/false -u 40 mysql
+groupadd -g 40 mysql
+useradd -c "MySQL Server" -d /srv/mysql -g mysql -s /bin/false -u 40 mysql
 sed -i "s@data/test@\${INSTALL_MYSQLTESTDIR}@g"        sql/CMakeLists.txt       
 sed -i "s/srv_buf_size/srv_sort_buf_size/"      storage/innobase/row/row0log.cc
 try mkdir build
