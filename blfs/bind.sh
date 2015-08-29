@@ -30,7 +30,7 @@ sed '/conf/d;/^#/!d;s:^# ::' /etc/rndc.conf > /srv/named/etc/named.conf
 
 try install -v -m644 $lfsroot/blfs/templates/named.conf /srv/named/etc/
 try install -v -m644 $lfsroot/blfs/templates/127.0.0 /srv/named/etc/namedb/pz/
-try install -v -m644 $lfsroot/blfs/templates/roots.hints /srv/named/etc/namedb/
+try install -v -m644 $lfsroot/blfs/templates/root.hints /srv/named/etc/namedb/
 
 try chown -R named:named /srv/named
 
