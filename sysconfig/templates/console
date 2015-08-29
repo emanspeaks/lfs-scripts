@@ -1,0 +1,8 @@
+# Begin /etc/sysconfig/console
+
+LOGLEVEL="1"
+UNICODE="1"
+KEYMAP="us"
+FONT="Lat2-Terminus16 -m 8859-1"
+
+# End /etc/sysconfig/console
