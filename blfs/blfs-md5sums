@@ -66,6 +66,7 @@ fa7e704aad33eb114d1840164455aec1  gnupg-2.0.26.tar.bz2
 1b29c10db4aa88afcaeeaabeef6790db  lsof_4.88.tar.bz2
 8acf839bfef2364a05fbd6be5f8edf9a  rpcbind-0.2.2.tar.bz2
 1e2f3c1ed468dee02d00c534c002ea10  nfs-utils-1.3.2.tar.bz2
+b7d75b67fd3987952896d27256c7293d  cifs-utils-6.4.tar.bz2
 2ca3474c5cefebbbeea32710b048cd1c  bind-9.10.1-P2.tar.gz
 5486180ec5a23efb5cae6d4292b300ab  apr-1.5.1.tar.bz2
 2202b18f269ad606d70e1864857ed93c  apr-util-1.5.4.tar.bz2

@@ -161,8 +161,18 @@ case $startpt in
             --without-tcp-wrappers \
             --disable-nfsv4        \
             --disable-gss ;&
-# http://www.linuxfromscratch.org/patches/blfs/7.7/bind-9.10.1-P2-use_iproute2-1.patch
-# ftp://ftp.isc.org/isc/bind9/9.10.1-P2/bind-9.10.1-P2.tar.gz
+	70) ptry $wrap cifs-utils-6.4.tar.bz2 generic.sh \
+						--disable-systemd	\
+						--with-pamdir=/lib/security ;&
+	71) ptry $wrap bind-9.10.1-P2.tar.gz bind.sh \
+						--sysconfdir=/etc       \
+            --localstatedir=/var    \
+            --mandir=/usr/share/man \
+            --enable-threads        \
+            --with-libtool          \
+            --disable-static        \
+            --with-randomdev=/dev/urandom 
+
 # http://archive.apache.org/dist/apr/apr-1.5.1.tar.bz2
 # http://archive.apache.org/dist/apr/apr-util-1.5.4.tar.bz2
 # http://www.linuxfromscratch.org/patches/blfs/7.7/httpd-2.4.12-blfs_layout-1.patch

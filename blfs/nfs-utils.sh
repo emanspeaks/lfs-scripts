@@ -7,6 +7,7 @@ sed -i "/daemon_init/s:\!::" utils/statd/statd.c
 try source $lfsroot/blfs/genericcheck.sh
 
 try install -v -m644 $lfsroot/blfs/templates/nfs-server /etc/sysconfig/
+try touch /etc/exports
 
 pushd $bootscripts
 try make install-nfs-server
