@@ -171,7 +171,7 @@ case $startpt in
             --enable-threads        \
             --with-libtool          \
             --disable-static        \
-            --with-randomdev=/dev/urandom 
+            --with-randomdev=/dev/urandom ;&
 
 # http://archive.apache.org/dist/apr/apr-1.5.1.tar.bz2
 # http://archive.apache.org/dist/apr/apr-util-1.5.4.tar.bz2
