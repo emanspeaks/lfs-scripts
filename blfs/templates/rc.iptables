@@ -104,8 +104,12 @@ echo 0 > /proc/sys/net/ipv4/tcp_ecn
 
 ## LOOPBACK
 # Allow unlimited traffic on the loopback interface.
-iptables -A INPUT  -i lo -j ACCEPT
-iptables -A OUTPUT -o lo -j ACCEPT
+#iptables -A INPUT  -i lo -j ACCEPT
+#iptables -A OUTPUT -o lo -j ACCEPT
+
+## free traffic on all but external interface
+iptables -A INPUT  ! -i $IFACE -j ACCEPT
+iptables -A OUTPUT ! -o $IFACE -j ACCEPT
 
 ## Let the package through early if we are already established
 iptables -A INPUT  -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
@@ -114,13 +118,9 @@ iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 ## Free output on external interface
 #iptables -A OUTPUT -i $IFACE -j ACCEPT
 
-## free traffic on internal interface
-iptables -A INPUT  -i ! $IFACE -j ACCEPT
-iptables -A OUTPUT -o ! $IFACE -j ACCEPT
-
 ## drop invalid packets or scans
-iptables -I INPUT 0 -i $IFACE -p tcp -m conntrack --ctstate INVALID -j LOG --log-prefix "FIREWALL:INVALID "
-iptables -I INPUT 1 -i $IFACE -p tcp -m conntrack --ctstate INVALID -j DROP
+iptables -A INPUT -i $IFACE -p tcp -m conntrack --ctstate INVALID -j LOG --log-prefix "FIREWALL:INVALID "
+iptables -A INPUT -i $IFACE -p tcp -m conntrack --ctstate INVALID -j DROP
 
 # SYN-FLOODING PROTECTION
 # This rule maximizes the rate of incoming connections. In order to
