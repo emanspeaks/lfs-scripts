@@ -7,7 +7,7 @@ try patch -Np1 -i ../httpd-2.4.12-blfs_layout-1.patch
 sed 's/ldump_writer, &b/&, NULL/' -i modules/lua/mod_lua.c  
 sed '/dir.*CFG_PREFIX/s@^@#@'     -i support/apxs.in        
 
-try ./configure --enable-authnz-fcgi                            \
+./configure --enable-authnz-fcgi                            \
             --enable-layout=BLFS                            \
             --enable-mods-shared="all cgi"                  \
             --enable-mpms-shared=all                        \
