@@ -26,7 +26,8 @@ sed '/dir.*CFG_PREFIX/s@^@#@'     -i support/apxs.in
 						--enable-session-cookie \
 						--enable-session-crypto \
 						--enable-session-dbd \
-						--enable-rewrite 
+						--enable-rewrite \
+						--enable-so
 try make
 try make install                                 
 

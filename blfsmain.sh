@@ -175,12 +175,16 @@ case $startpt in
 	72) ptry $wrap apr-1.5.1.tar.bz2 apr.sh ;&
 	73) ptry $wrap apr-util-1.5.4.tar.bz2 apr-util.sh ;&
 	74) ptry $wrap httpd-2.4.12.tar.bz2 httpd.sh ;&
-# http://downloads.sourceforge.net/project/mcrypt/Libmcrypt/2.5.8/libmcrypt-2.5.8.tar.gz
-# http://ftp.gnu.org/gnu/aspell/aspell-0.60.6.1.tar.gz
-# http://www.abisource.com/downloads/enchant/1.6.0/enchant-1.6.0.tar.gz
-# http://downloads.sourceforge.net/libexif/libexif-0.6.21.tar.bz2
-# http://downloads.sourceforge.net/openjpeg.mirror/openjpeg-2.1.0.tar.gz
-# http://www.php.net/distributions/php-5.6.6.tar.xz
+	75) ptry $wrap libmcrypt-2.5.8.tar.gz generic.sh \
+		--disable-posix-threads --enable-dynamic-loading  ;&
+	76) ptry $wrap aspell-0.60.6.1.tar.gz aspell.sh ;&
+	77) ptry $wrap aspell6-en-2015.04.24-0.tar.bz2 generic.sh ;&
+	78) ptry $wrap enchant-1.6.0.tar.gz generic.sh ;&
+	79) ptry $wrap libexif-0.6.21.tar.bz2 genericcheck.sh \
+						--with-doc-dir=/usr/share/doc/libexif-0.6.21 \
+            --disable-static ;&
+	80) ptry $wrap openjpeg-2.1.0.tar.gz openjpeg.sh ;&
+	81) ptry $wrap php-5.6.6.tar.xz php.sh ;&
 # http://ftp.debian.org/debian/pool/main/w/whois/whois_5.2.7.tar.xz
 # http://downloads.sourceforge.net/tripwire/tripwire-2.4.2.2-src.tar.bz2
 # http://www.sudo.ws/sudo/dist/sudo-1.8.12.tar.gz
