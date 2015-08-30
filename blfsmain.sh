@@ -172,11 +172,9 @@ case $startpt in
             --with-libtool          \
             --disable-static        \
             --with-randomdev=/dev/urandom ;&
-
-# http://archive.apache.org/dist/apr/apr-1.5.1.tar.bz2
-# http://archive.apache.org/dist/apr/apr-util-1.5.4.tar.bz2
-# http://www.linuxfromscratch.org/patches/blfs/7.7/httpd-2.4.12-blfs_layout-1.patch
-# https://archive.apache.org/dist/httpd/httpd-2.4.12.tar.bz2
+	72) ptry $wrap apr-1.5.1.tar.bz2 apr.sh ;&
+	73) ptry $wrap apr-util-1.5.4.tar.bz2 apr-util.sh ;&
+	74) ptry $wrap httpd-2.4.12.tar.bz2 httpd.sh ;&
 # http://downloads.sourceforge.net/project/mcrypt/Libmcrypt/2.5.8/libmcrypt-2.5.8.tar.gz
 # http://ftp.gnu.org/gnu/aspell/aspell-0.60.6.1.tar.gz
 # http://www.abisource.com/downloads/enchant/1.6.0/enchant-1.6.0.tar.gz
