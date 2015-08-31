@@ -1,3 +1,4 @@
+#--with-apxs2                     \
 try ./configure --prefix=/usr                    \
             --sysconfdir=/etc                \
 						--localstatedir=/var         \
@@ -6,7 +7,9 @@ try ./configure --prefix=/usr                    \
             --with-config-file-path=/etc     \
             --disable-ipv6                   \
             --with-openssl                   \
-            --with-apxs2                     \
+            --enable-fpm                 \
+            --with-fpm-user=apache       \
+            --with-fpm-group=apache      \
             --with-pcre-regex=/usr           \
             --with-zlib                      \
             --enable-bcmath                  \
@@ -41,7 +44,8 @@ try ./configure --prefix=/usr                    \
 try make
 try make test
 try make install
-try install -v -m644 php.ini-production /etc/php.ini    
+try install -v -m644 php.ini-production /etc/php.ini
+try mv -v /etc/php-fpm.conf{.default,}            
 try install -v -m755 -d /usr/share/doc/php-5.6.6 
 try install -v -m644    CODING_STANDARDS EXTENSIONS INSTALL NEWS README* UPGRADING* php.gif \
                     /usr/share/doc/php-5.6.6 
@@ -52,3 +56,6 @@ try ln -v -sfn          /usr/lib/php/doc/Structures_Graph/docs \
 
 sed -i 's@php/includes"@&\ninclude_path = ".:/usr/lib/php"@' \
     /etc/php.ini
+sed -i -e '/proxy_module/s/^#//'      \
+       -e '/proxy_fcgi_module/s/^#//' \
+       /etc/httpd/httpd.conf
