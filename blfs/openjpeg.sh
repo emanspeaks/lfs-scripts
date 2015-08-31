@@ -1,8 +1,7 @@
 try mkdir build
 cd  build
-try cmake -DBUILD_TESTING=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr .. 
+try cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr .. 
 try make
-try make test
 try make install
 cd ../doc
 for man in man/man?/* ; do
