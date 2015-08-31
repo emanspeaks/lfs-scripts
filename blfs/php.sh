@@ -18,7 +18,6 @@ try ./configure --prefix=/usr                    \
             --with-curl                      \
             --enable-dba=shared              \
             --with-gdbm                      \
-            --with-db4                       \
             --enable-exif                    \
             --enable-ftp                     \
             --with-openssl-dir=/usr          \
