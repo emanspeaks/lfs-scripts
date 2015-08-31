@@ -3,13 +3,10 @@ try ./configure --prefix=/usr                    \
 						--localstatedir=/var         \
             --datadir=/usr/share/php     \
             --mandir=/usr/share/man      \
-            --enable-fpm                 \
-            --with-fpm-user=apache       \
-            --with-fpm-group=apache      \
             --with-config-file-path=/etc     \
             --disable-ipv6                   \
             --with-openssl                   \
-            --with-kerberos                  \
+            --with-apxs2                     \
             --with-pcre-regex=/usr           \
             --with-zlib                      \
             --enable-bcmath                  \
@@ -26,7 +23,6 @@ try ./configure --prefix=/usr                    \
             --with-png-dir=/usr              \
             --with-zlib-dir=/usr             \
             --with-freetype-dir=/usr         \
-            --with-t1lib                     \
             --with-gettext                   \
             --with-gmp                       \
             --enable-mbstring                \
@@ -60,10 +56,3 @@ try ln -v -sfn          /usr/lib/php/doc/Structures_Graph/docs \
 
 sed -i 's@php/includes"@&\ninclude_path = ".:/usr/lib/php"@' \
     /etc/php.ini
-sed -i -e '/proxy_module/s/^#//'      \
-       -e '/proxy_fcgi_module/s/^#//' \
-       /etc/httpd/httpd.conf
-
-pushd $bootscripts
-try make install-php
-popd
