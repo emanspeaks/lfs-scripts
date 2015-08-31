@@ -5,6 +5,6 @@ try install -v -m755 -d /usr/share/doc/tidy-cvs_20101110
 try install -v -m644    htmldoc/*.{html,gif,css} \
                     /usr/share/doc/tidy-cvs_20101110
 cd htmldoc/
-try doxygen
+try doxygen doxygen.cfg
 try cp -rv htmldoc/api /usr/share/doc/tidy-cvs_20101110
 cd ..
