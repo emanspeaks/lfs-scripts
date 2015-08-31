@@ -33,7 +33,6 @@ try ./configure --prefix=/usr                    \
             --without-pdo-sqlite             \
             --with-pspell                    \
             --with-readline                  \
-            --with-snmp                      \
             --enable-sockets                 \
             --with-tidy                      \
             --with-xsl                       \
