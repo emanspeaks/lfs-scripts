@@ -1,11 +1,10 @@
-try ./configure --prefix=/usr              \
+./configure --prefix=/usr              \
             --libexecdir=/usr/lib      \
             --with-secure-path         \
             --with-all-insults         \
             --with-env-editor          \
             --docdir=/usr/share/doc/sudo-1.8.12 \
             --with-passprompt="[sudo] password for %p" \
-						--disable-static
 try make
 env LC_ALL=C make check 2>&1 | tee ../make-check.log
 echo "RESULTS OF CHECK"
