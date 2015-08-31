@@ -4,7 +4,7 @@
             --with-all-insults         \
             --with-env-editor          \
             --docdir=/usr/share/doc/sudo-1.8.12 \
-            --with-passprompt="[sudo] password for %p" \
+            --with-passprompt="[sudo] password for %p" 
 try make
 env LC_ALL=C make check 2>&1 | tee ../make-check.log
 echo "RESULTS OF CHECK"
