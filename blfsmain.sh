@@ -178,19 +178,17 @@ case $startpt in
 	75) ptry $wrap libmcrypt-2.5.8.tar.gz generic.sh \
 		--disable-posix-threads --enable-dynamic-loading  ;&
 	76) ptry $wrap aspell-0.60.6.1.tar.gz aspell.sh ;&
-	77) ptry $wrap aspell6-en-2015.04.24-0.tar.bz2 generic.sh ;&
+	77) ptry $wrap aspell6-en-2015.04.24-0.tar.bz2 aspell6-en.sh ;&
 	78) ptry $wrap enchant-1.6.0.tar.gz generic.sh ;&
 	79) ptry $wrap libexif-0.6.21.tar.bz2 genericcheck.sh \
 						--with-doc-dir=/usr/share/doc/libexif-0.6.21 \
             --disable-static ;&
 	80) ptry $wrap openjpeg-2.1.0.tar.gz openjpeg.sh ;&
 	81) ptry $wrap php-5.6.6.tar.xz php.sh ;&
-# http://ftp.debian.org/debian/pool/main/w/whois/whois_5.2.7.tar.xz
-# http://downloads.sourceforge.net/tripwire/tripwire-2.4.2.2-src.tar.bz2
-# http://www.sudo.ws/sudo/dist/sudo-1.8.12.tar.gz
-
+	82) ptry $wrap whois_5.2.7.tar.xz whois.sh ;&
+	#83) ptry $wrap tripwire-2.4.2.2-src.tar.bz2 tripwire.sh ;&
+	84) ptry $wrap sudo-1.8.12.tar.gz sudo.sh ;&
 	
-		
 	*) pressanykey; startpt= ;;
 esac
 popd
