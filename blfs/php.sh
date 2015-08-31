@@ -42,7 +42,6 @@ try make
 try make test
 try make install
 try install -v -m644 php.ini-production /etc/php.ini    
-try mv -v /etc/php-fpm.conf{.default,}                   
 try install -v -m755 -d /usr/share/doc/php-5.6.6 
 try install -v -m644    CODING_STANDARDS EXTENSIONS INSTALL NEWS README* UPGRADING* php.gif \
                     /usr/share/doc/php-5.6.6 
