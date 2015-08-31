@@ -59,3 +59,10 @@ sed -i 's@php/includes"@&\ninclude_path = ".:/usr/lib/php"@' \
 sed -i -e '/proxy_module/s/^#//'      \
        -e '/proxy_fcgi_module/s/^#//' \
        /etc/httpd/httpd.conf
+echo \
+'ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/srv/www/$1' >> \
+/etc/httpd/httpd.conf
+			 
+pushd $bootscripts
+try make install-php
+popd
