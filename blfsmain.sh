@@ -184,10 +184,11 @@ case $startpt in
 						--with-doc-dir=/usr/share/doc/libexif-0.6.21 \
             --disable-static ;&
 	80) ptry $wrap openjpeg-2.1.0.tar.gz openjpeg.sh ;&
-	81) ptry $wrap php-5.6.6.tar.xz php.sh ;&
-	82) ptry $wrap whois_5.2.7.tar.xz whois.sh ;&
-	#83) ptry $wrap tripwire-2.4.2.2-src.tar.bz2 tripwire.sh ;&
-	84) ptry $wrap sudo-1.8.12.tar.gz sudo.sh ;&
+	81) ptry $wrap tidy-cvs_20101110.tar.bz2 tidy.sh --disable-static ;&
+	82) ptry $wrap php-5.6.6.tar.xz php.sh ;&
+	83) ptry $wrap whois_5.2.7.tar.xz whois.sh ;&
+	#84) ptry $wrap tripwire-2.4.2.2-src.tar.bz2 tripwire.sh ;&
+	85) ptry $wrap sudo-1.8.12.tar.gz sudo.sh ;&
 	
 	*) pressanykey; startpt= ;;
 esac
