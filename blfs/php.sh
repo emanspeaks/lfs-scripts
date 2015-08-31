@@ -29,9 +29,7 @@ try ./configure --prefix=/usr                    \
             --with-mysql                     \
             --with-mysqli=mysqlnd            \
             --with-mysql-sock=/var/run/mysql \
-            --with-unixODBC=/usr             \
             --with-pdo-mysql                 \
-            --with-pdo-odbc=unixODBC,/usr    \
             --without-pdo-sqlite             \
             --with-pspell                    \
             --with-readline                  \
