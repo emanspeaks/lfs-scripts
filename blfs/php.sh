@@ -18,7 +18,7 @@ try ./configure --prefix=/usr                    \
             --enable-exif                    \
             --enable-ftp                     \
             --with-openssl-dir=/usr          \
-            --with-gd=/usr                   \
+            --with-gd                   \
             --with-jpeg-dir=/usr             \
             --with-png-dir=/usr              \
             --with-zlib-dir=/usr             \
